@@ -50,20 +50,24 @@
 		for (var currentRange = 0; currentRange < ruleRange; currentRange++)
 		{
 		    var distance = currentRange + 1;
-		    if (true)//position >= distance)
-		    {
-			if (distance <= position && rules[rule].callback(element, input[position - distance], distance) ||
-			(input.length - position) > currentRange && rules[rule].callback(element, input[position + currentRange], distance))
-			{
-			    //console.log("found position conflict");
-			    isRuleBroken = true;
 
-			} else {
-			    if (true)//rules[rule].inclusive)
+		    if (distance <= position && rules[rule].callback(element, input[position - distance], distance) ||
+		    (input.length - position) > currentRange && rules[rule].callback(element, input[position + currentRange], distance))
+		    {
+			//console.log("found position conflict");
+			isRuleBroken = true;
+
+
+		    } else {
+			if (true)//rules[rule].inclusive)
+			{
+			    isRuleBroken = false;
+			    if (rules[rule].inclusive)
 			    {
-				isRuleBroken = false;
+				break;
 			    }
 			}
+
 		    }
 
 
@@ -110,6 +114,7 @@
 			    if (rules[rule].inclusive)
 			    {
 				ruleIsBroken = false;
+				break;
 			    }
 			}
 
@@ -170,7 +175,40 @@
 	getResult: function()
 	{
 	    return this.export();
+	},
+	printTable: function(targetDOMElement)
+	{
+	    var DOMSpace = targetDOMElement || document.body;
+	    var htmlString ="<table border = 1>";
+	    var listLength = this.workingList.length;
+	    for (var i = 0; i < listLength; i++)
+	    {
+		htmlString += "<tr><td>" + this.workingList[i] + "</td></tr>";
+	    }
+	    htmlString += "</table>";
+	    DOMSpace.innerHTML += htmlString;
+	},
+	printCustom: function(targetDOMElement,callback,header,footer)
+	{
+	    var DOMSpace = targetDOMElement || document.body;
+	    var htmlString =header;
+	    var listLength = this.workingList.length;
+	    for (var i = 0; i < listLength; i++)
+	    {
+		htmlString += callback(this.workingList[i]);
+	    }
+	    htmlString += footer;
+	    DOMSpace.innerHTML += htmlString;
+	},
+	printToConsole: function()
+	{
+	    var listLength = this.workingList.length;
+	    for (var i = 0; i < listLength; i++)
+	    {
+		console.log(this.workingList[i]);
+	    }
 	}
+
     };
-window["resRand"] = resRand;
+    window["resRand"] = resRand;
 })(window);

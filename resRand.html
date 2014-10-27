@@ -6,11 +6,55 @@ and open the template in the editor.
 -->
 <html>
     <head>
-	<title>TODO supply a title</title>
+	<title>resRand.js Template</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-	<div>TODO write content</div>
+	<script src="resRand.min.js"></script>
+	<script>
+	    var resRand; //Do not change or remove this line.
+
+
+	    var userArray = [
+		// Fill this array with to be randomised numbers, strings, or objects, seperated by a comma.
+	    ];
+
+	    resRand.import(userArray); // Import your array into the resRand object.
+
+	    //Create sorting rules for your array
+
+	    var myRule1 = function(element1, element2)
+	    {
+		//This function should compare elements or parts of elements.  If the elements match, the rule is considered broken.  This function must RETURN the boolean result of this comparison: true if elements match, false if elements do not match.
+		var letter1 = element1.substr(1, 1);
+		var letter2 = element2.substr(1, 1);
+		var matches = letter1 === letter2;
+		return matches;
+	    };
+
+	    var myRule2 = function(element1, element2)
+	    {
+		//The previous rule can be shortened to the following code and still perform the same
+		return (element1.substr(1, 1) === element2.substr(1, 1));
+	    };
+
+	    //Once you've built all your rules, add them to the resRand object.
+
+	    resRand.addRule(myRule1, 2); //No more than two matching elements in a row
+	    resRand.addRule(myRule1, 2, false); //No less than 2 spaces between matching elements
+
+	    //With all the rules added, run the .go() function. This function returns an array that you may stor in a variable
+
+	    var result = resRand.go();
+
+	    //To automatically print the results to a table, run the .printTable() method. To print to a specific DOM element, enter the element as an argument to the function, eg. resRand.printTable(document.body);.
+
+	    resRand.printTable();
+
+
+
+
+	</script>
     </body>
 </html>

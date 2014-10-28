@@ -15,25 +15,26 @@ You should be familiar with the following JavaScript types.
 
 ######Variable
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.
-```
+```javascript
 var myNumber = 2 + 3;
 =>myNumber returns 5
 ```
 
 Comparison - Comparisons are used to compare values with eachother.
-```
+```javascript
 === - equal to
 !== - not equal to
 < - less than
 <= - less than or equal to
 > - greater than
 >= - greater than or equal to
-=>10 === 10 returns true
-=>"left" !== right returns true
-=>9 <= 2 returns false
-=>3 > 3 returns false
-=>3 >= 3 returns true
 ```
+:point_right: `10 === 10` returns `true`  
+:point_right: "left" !== right returns true  
+:point_right: 9 <= 2 returns false  
+:point_right: 3 > 3 returns false   
+:point_right: 3 >= 3 returns true  
+
 
 Logic - Logical operators determine logic between values.
 ```
@@ -46,7 +47,7 @@ Logic - Logical operators determine logic between values.
 ```
 
 String - A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include .length, .split() or .substr().
-```
+```javascript
 var myString = "Hello Worf!";
 =>myString.length returns 11
 =>myString.substr(0,4) returns "Hell"

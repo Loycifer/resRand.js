@@ -22,13 +22,16 @@ var myNumber = 2 + 3;
 
 ######Comparison
 Comparisons are used to compare values with eachother.
+
+Symbol | Meaning
+:----:|----
+`===` | equal to
+`!==` | not equal to
+`<` | less than
+`<=` | less than or equal to
+`>` | greater than
+`>=` | greater than or equal to
 ```javascript
-=== - equal to
-!== - not equal to
-< - less than
-<= - less than or equal to
-> - greater than
->= - greater than or equal to
 ~ 10 === 10 returns true  
 ~ "left" !== "right" returns true  
 ~ 9 <= 2 returns false  

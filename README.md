@@ -3,7 +3,7 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 
 - [What You Should Know About JavaScript](#What You Should Know About JavaScript)
   - [Variables]
-  - [Functions](######Functions)
+  - [Functions](#####Functions)
 
 
 

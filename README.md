@@ -17,7 +17,7 @@ You should be familiar with the following JavaScript types.
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.
 ```javascript
 var myNumber = 2 + 3;
-~ `myNumber` returns `5`
+~ myNumber returns 5
 ```
 
 ######Comparison

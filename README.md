@@ -2,12 +2,12 @@
 resRand.js is an easy-to-use JavaScript object for restricted randomization of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 
 ###Contents
-- [Overview]
-- [Tutorial]
-  1. Using the template file resRand.html
-  2. Importing your list of items
-  3. Creating and applying sorting rules
-  4. Retrieving your randomised list
+- [Overview](#overview)
+- [Tutorial](#tutorial)
+  1. [Using the template file resRand.html](#using-the-template-file-resrandhtml)
+  2. [Importing your list of items](#importing-your-list-of-items)
+  3. [Creating and applying sorting rules](#creating-and-applying-sorting-rules)
+  4. [Retrieving your randomised list](#retrieving-your-randomised-list)
 - [API](#api)
   - [Methods](#methods)
     - [.addRule(...)](#addrule)
@@ -40,6 +40,10 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 
 ####Overview
 ####Tutorial
+#####Using the template file resRand.html
+#####Importing your list of items
+#####Creating and applying sorting rules
+#####Retrieving your randomised list
 ####API
 #####Methods
 #####.addRule(...)

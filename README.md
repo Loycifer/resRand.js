@@ -46,6 +46,7 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ###Retrieving your randomised list
 ##API
 ###Methods
+---
 ####.addRule(...)
 #####Summary
 The `.addRule(...)` method adds a sorting rule to resRand's randomisation process.
@@ -54,11 +55,34 @@ The `.addRule(...)` method adds a sorting rule to resRand's randomisation proces
 resRand.addRule(function : rule[, int : range, bool : isInclusive])
 ```
 #####Parameters
-- **rule**  - *Required.* A sorting function
-- **range** - *Optional.* The distance from an element to which the rule should be applied.
-- **isInclusive** - *Optional.*
+- **rule**  - *Required.* A function which takes two arguments and returns a boolean.  This function should compare aspects of its two arguments and return `true` if the comparison passes and `false` if the comparison fails. 
+- **range** - *Optional.* An integer which specifies the distance from an element to which the rule should be applied. Default value is `1`. 
+- **isInclusive** - *Optional.* A boolean which specifies whether the rule should be inclusive with `true` or exclusive with `false`.  An inclusive rule with a range of 2 will ensure that no more than two matching elements will exist in a row, while an exclusive rule will ensure that two matching elemnts will have at least 2 non-matching elements between them.  With range set to 1, inclusive and exclusive rules are identical.  Default value is `true`.
 
 #####Example
+```javascript
+var myFirstRule = function(element1, element2)
+{
+  var isMatching = element1.substr(2,1) === element2.substr(2,1); // Comparing the 3rd character in each element 
+  return isMatching; // Returning the result of the comparison
+};
+
+var mySecondRule = function(element1, element2)
+{
+  return (element1.split("_")[1] === element2.split("_")[1]); // Returning the result of comparing the characters between the first and second underscore 
+};
+
+var myLastRule = function(element1, element2)
+{
+  return (element1.toneContour === element2.toneContour); // Returning the result of comparing the .toneContour properties of the elements
+};
+
+resRand.addRule(myFirstRule); // Ensures that no elements with matching 3rd characters will be touching
+resRand.addRule(myFirstRule, 3); // Ensures that no more than 3 matching elements will exist in a row
+resRand.addRule(myFirstRule, 3, false); // Ensures that matching elements will be at least 3 spaces apart
+```
+---
+
 ####.applyRules()
 ####.checkElementAgainstPosition(...)
 ####.export()

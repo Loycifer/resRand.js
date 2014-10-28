@@ -1,7 +1,7 @@
 #resRand.js
 resRand.js is an easy-to-use JavaScript object for restricted randomization of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 
-###Contents
+##Contents
 - [Overview](#overview)
 - [Tutorial](#tutorial)
   1. [Using the template file resRand.html](#using-the-template-file-resrandhtml)
@@ -38,39 +38,47 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 
 
 
-####Overview
-####Tutorial
-#####Using the template file resRand.html
-#####Importing your list of items
-#####Creating and applying sorting rules
-#####Retrieving your randomised list
-####API
-#####Methods
-#####.addRule(...)
-#####.applyRules()
-#####.checkElementAgainstPosition(...)
-#####.export()
-#####.getResult()
-#####.go(...)
-#####.import(...)
-#####.printCustom(...)
-#####.printTable(...)
-#####.printToConsole()
-#####.randomise()
-#####Properties
-#####.length
-#####.rules
-#####.sourceList
-#####.workingList
+##Overview
+##Tutorial
+###Using the template file resRand.html
+###Importing your list of items
+###Creating and applying sorting rules
+###Retrieving your randomised list
+##API
+###Methods
+####.addRule(...)
+#####Summary
+The `.addRule()` method adds a sorting rule to resRand's randomisation process.
+#####Syntax
+```javascript
+resRand.addRule(function : callback, int : range, bool : isInclusive)
+```
+#####Parameters
+#####Example
+####.applyRules()
+####.checkElementAgainstPosition(...)
+####.export()
+####.getResult()
+####.go(...)
+####.import(...)
+####.printCustom(...)
+####.printTable(...)
+####.printToConsole()
+####.randomise()
+###Properties
+####.length
+####.rules
+####.sourceList
+####.workingList
 
-####JavaScript Quick Reference
+##JavaScript Quick Reference
 
 JavaScript can be run in all modern web browsers without additional software installation.
 
 You should be familiar with the following JavaScript types.
 
 ---
-#####Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+###Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword `var`.  It is important to remember that variable names are case-sensitive; `myVar` is not the same as `MyVar`.  Variable names are conventionally type in camelCase, but this is not a requirement of the language.  A variable declared inside a function is locally scoped; this means the variable will only be available from with the function.
 ```javascript
 var myNumber = 2 + 3;
@@ -84,7 +92,7 @@ var lastName = "Dover";
 
 
 ---
-#####Comparison [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+###Comparison [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 Comparisons are used to compare values with eachother.  The return type of a comparison is a boolean (`true` or `false`).
 
 Symbol | Meaning
@@ -108,7 +116,7 @@ Symbol | Meaning
 ```
 
 ---
-#####Logic [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+###Logic [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 Logical operators determine logic between values.  And-operators `&&` evaluate to true when all values equal true. Or-operators `||` evaluate to true when at least one of the values is true.  The not-operator `!` returns the opposite of its value.
 
 Symbol | Meaning
@@ -126,7 +134,7 @@ Symbol | Meaning
 ~ !true returns false
 ```
 ---
-#####Boolean [[?]](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
+###Boolean [[?]](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
 A boolean is a type that represents `true` or `false`.  Booleans are typed without quotes, and are the standard return type of comparisons and logical evaluations.
 ```javascript
 var isFourMoreThanThree = 4 > 3;
@@ -137,7 +145,7 @@ var doPigsMakeGoodSeaplanes = canPigsFly && canPigsSwim;
 ~ doPigsMakeGoodSeaplanes returns false
 ```
 ---
-#####If...else [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+###If...else [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 `If...else` statements allow for conditional execution of code.  These statements are syntactically organized like this: `if(isRaining){bring umbrella;}else{wear shades;}`.  The `else {}` block is optional.  
 ```javascript
 var x = 20;
@@ -159,7 +167,7 @@ if (x < 15)
 
 ```
 ---
-#####String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+###String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include `.length`, `.split()` or `.substr()`. Strings can be concatenated using the `+` operator.
 ```javascript
 var myString = "Hello Worf!";
@@ -172,7 +180,7 @@ var myString = "Hello Worf!";
 ```
 ---
 
-#####Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+###Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 An array is an ordered list of elements, enclosed with square brackets, seperated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  An element can be accessed by entering the number in square brackets after the array name.  JavaScript supports arrays with multiple element types.
 ```javascript
 var myArray = [1,2,"three",Math.PI,[true,false]]
@@ -182,7 +190,7 @@ var myArray = [1,2,"three",Math.PI,[true,false]]
 ```
 
 ---
-#####Function [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
+###Function [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 A function is a named block of code that is only executed when called.  Variables can be passed into a function as arguments.  A function that belongs to an object is called a method.  Functions can be assigned to variable names using the `function` expression to create a lambda function.  (There are a few ways to declare functions, but this method should be learned first.)  The `return` keyword is used to specify what a function outputs when called.
 ```javascript
 var addToFive = function(x) {return x+5;}
@@ -199,7 +207,7 @@ var doStuff = function(x)
 ```
 ---
 
-#####License
+###License
 
 Copyright :copyright: 2014  Loy Clements
 

@@ -3,18 +3,22 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 
 ###Contents
 - [Overview]
+- [Tutorial]
+- [API]
 - [JavaScript Quick Reference](#javascript-quick-reference)
   - [Variable](#variable)
-  - [Function](#function)
   - [Comparison](#comparison)
   - [Logic](#logic)
   - [String](#string)
   - [Boolean](#boolean)
   - [Array](#array)
+  - [Function](#function)
 
 
 
-
+####Overview
+####Tutorial
+####API
 
 ####JavaScript Quick Reference
 
@@ -23,13 +27,13 @@ JavaScript can be run in all modern web browsers without additional software ins
 You should be familiar with the following JavaScript types.
 
 ---
-#####Variable 
+#####Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.
 ```javascript
 var myNumber = 2 + 3;
 ~ myNumber returns 5
 ```
-[[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+
 
 ---
 #####Comparison

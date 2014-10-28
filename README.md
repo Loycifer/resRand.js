@@ -13,13 +13,14 @@ JavaScript can be run in nearly all modern web browsers without additional softw
 
 You should be familiar with the following JavaScript types.
 
+---
 ######Variable
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.
 ```javascript
 var myNumber = 2 + 3;
 ~ myNumber returns 5
 ```
-
+---
 ######Comparison
 Comparisons are used to compare values with eachother.
 
@@ -39,7 +40,7 @@ Symbol | Meaning
 ~ 3 >= 3 returns true
 ```
 
-
+---
 ######Logic
 Logical operators determine logic between values.
 ```javascript

@@ -63,27 +63,30 @@ resRand.addRule(function : rule[, int : range, bool : isInclusive])
 ```javascript
 var myFirstRule = function(element1, element2)
 {
-  var isMatching = element1.substr(2,1) === element2.substr(2,1); 
   // Comparing the 3rd character in each element 
-  return isMatching; 
+  var isMatching = element1.substr(2,1) === element2.substr(2,1); 
   // Returning the result of the comparison
+  return isMatching; 
 };
 
 var mySecondRule = function(element1, element2)
 {
-  return (element1.split("_")[1] === element2.split("_")[1]); 
   // Returning the result of comparing the characters between the first and second underscore 
+  return (element1.split("_")[1] === element2.split("_")[1]); 
 };
 
 var myLastRule = function(element1, element2)
 {
-  return (element1.toneContour === element2.toneContour); 
   // Returning the result of comparing the .toneContour properties of the elements
+  return (element1.toneContour === element2.toneContour); 
 };
 
-resRand.addRule(myFirstRule); // Ensures that no elements with matching 3rd characters will be touching
-resRand.addRule(myFirstRule, 3); // Ensures that no more than 3 matching elements will exist in a row
-resRand.addRule(myFirstRule, 3, false); // Ensures that matching elements will be at least 3 spaces apart
+// Ensures that no elements with matching 3rd characters will be touching
+resRand.addRule(myFirstRule); 
+// Ensures that no more than 3 elements with matching segments after the first '_' will exist in a row
+resRand.addRule(myFirstRule, 3); 
+ // Ensures that elements with matching .toneContour properties will be at least 4 spaces apart
+resRand.addRule(myFirstRule, 4, false);
 ```
 ---
 

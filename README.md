@@ -30,8 +30,8 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
   - [Variable](#variable)
   - [Comparison](#comparison)
   - [Logic](#logic)
-  - [String](#string)
   - [Boolean](#boolean)
+  - [String](#string)
   - [Array](#array)
   - [Function](#function)
 
@@ -49,10 +49,15 @@ You should be familiar with the following JavaScript types.
 
 ---
 #####Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-  A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.
+  A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.  It is important to remember that variable names are case-sensitive; myVar is not the same as MyVar.  Variable names are conventionally type in camelCase, but this is not a requirement of the language.  A variable declared inside a function is locally scoped; this means the variable will only be available from with the function.
 ```javascript
 var myNumber = 2 + 3;
+var ten = 10;
+var firstName = "Benjamin";
+var lastName = "Dover";
 ~ myNumber returns 5
+~ myNumber * ten returns 50
+~ firstName + lastName returns "BenjaminDover"
 ```
 
 
@@ -82,7 +87,7 @@ Symbol | Meaning
 
 ---
 #####Logic [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
-Logical operators determine logic between values.
+Logical operators determine logic between values.  And-operators evaluate to true when all values equal true. Or-operators evaluate to true when at least one of the values is true.  The not-operator returns the opposite of its value.
 
 Symbol | Meaning
 :---:|---
@@ -90,21 +95,13 @@ Symbol | Meaning
 `||` | or
 `!` | not
 ```javascript
+~ true && true returns true
 ~ true && false returns false
+~ false && false returns false
+~ true || true returns true
 ~ true || false returns true
+~ false || false returns false
 ~ !true returns false
-```
-
----
-#####String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include .length, .split() or .substr().
-```javascript
-var myString = "Hello Worf!";
-~ myString.length returns 11
-~ myString.substr(0,4) returns "Hell"
-~ myString.substr(2,5) returns "llo W"
-~ myString.substr(2) returns "llo Worf!"
-~ myString.split("o") returns ["Hell","W","rf!"]
 ```
 ---
 #####Boolean [[?]](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
@@ -119,6 +116,18 @@ var doPigsMakeGoodSeaplanes = canPigsFly && canPigsSwim;
 ```
 
 ---
+#####String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include .length, .split() or .substr().
+```javascript
+var myString = "Hello Worf!";
+~ myString.length returns 11
+~ myString.substr(0,4) returns "Hell"
+~ myString.substr(2,5) returns "llo W"
+~ myString.substr(2) returns "llo Worf!"
+~ myString.split("o") returns ["Hell","W","rf!"]
+```
+---
+
 #####Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 An array is an ordered list of elements, enclosed with square brackets, seperated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  JavaScript supports arrays with multiple lement types.
 ```javascript

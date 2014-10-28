@@ -29,12 +29,12 @@ Comparisons are used to compare values with eachother.
 <= - less than or equal to
 > - greater than
 >= - greater than or equal to
+~ 10 === 10 returns true  
+~ "left" !== "right" returns true  
+~ 9 <= 2 returns false  
+~ 3 > 3 returns false   
+~ 3 >= 3 returns true
 ```
-* `10 === 10` returns `true`  
-* `"left" !== "right"` returns `true`  
-* `9 <= 2` returns `false`  
-* `3 > 3` returns `false`   
-* `3 >= 3` returns `true`
 
 
 ######Logic

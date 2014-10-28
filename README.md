@@ -105,7 +105,7 @@ Symbol | Meaning
 ```
 ---
 #####Boolean [[?]](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
-A boolean is a type that represents true or false.  Booleans are typed without quotes, and are the standard return type of comparisons.
+A boolean is a type that represents true or false.  Booleans are typed without quotes, and are the standard return type of comparisons and logical evaluations.
 ```javascript
 var isFourMoreThanThree = 4 > 3;
 var canPigsSwim = true;
@@ -114,22 +114,44 @@ var doPigsMakeGoodSeaplanes = canPigsFly && canPigsSwim;
 ~ isFourMoreThanThree returns true
 ~ doPigsMakeGoodSeaplanes returns false
 ```
+---
+#####If...else [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+If...else statements allow for conditional execution of code.  For example: if(isRaining){bring umbrella;}else{wear shades;}.  The 'else' block is optional.  
+```javascript
+var x = 20;
+if (x > 15)
+{
+  alert("That's a lot.");
+} 
+else
+{
+  alert("That's not much at all...");
+}
+~ will alert "That's a lot"
 
+if (x < 15)
+{
+  alert("That's not much at all...");
+}
+~ will do nothing
+
+```
 ---
 #####String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include .length, .split() or .substr().
+A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include .length, .split() or .substr(). Strings can be concatenated using the + operator.
 ```javascript
 var myString = "Hello Worf!";
 ~ myString.length returns 11
 ~ myString.substr(0,4) returns "Hell"
 ~ myString.substr(2,5) returns "llo W"
 ~ myString.substr(2) returns "llo Worf!"
+~ myString.split(" ") returns ["Hello","Worf!"]
 ~ myString.split("o") returns ["Hell","W","rf!"]
 ```
 ---
 
 #####Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-An array is an ordered list of elements, enclosed with square brackets, seperated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  JavaScript supports arrays with multiple lement types.
+An array is an ordered list of elements, enclosed with square brackets, seperated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  An element can be accessed by entering the number in square brackets after the array name.  JavaScript supports arrays with multiple element types.
 ```javascript
 var myArray = [1,2,"three",Math.PI,[true,false]]
 ~ myArray[0] returns 1
@@ -142,9 +164,16 @@ var myArray = [1,2,"three",Math.PI,[true,false]]
 A function is a named block of code that is only executed when called.  Variables can be passed into a function as arguments.  A function that belongs to an object is called a method.  Functions can be assigned to variable names using the function keyword to create a lambda function.  (There are a few ways to declare functions, but this method should be learned first.)
 ```javascript
 var addToFive = function(x) {return x+5;}
-var areEqual = function(x,y) {return x===y}
+var areEqual = function(x,y) {return x===y;}
+var doStuff = function(x) 
+{
+  var y = x * 2; 
+  var z = y + 1; 
+  return z;
+}
 ~ addToFive(11) returns 16
 ~ areEqual("blue","yellow") returns false
+~ doStuff(3) returns 7
 ```
 ---
 

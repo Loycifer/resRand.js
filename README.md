@@ -23,12 +23,14 @@ JavaScript can be run in all modern web browsers without additional software ins
 You should be familiar with the following JavaScript types.
 
 ---
-#####Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+#####Variable 
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword var.
 ```javascript
 var myNumber = 2 + 3;
 ~ myNumber returns 5
 ```
+[[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+
 ---
 #####Comparison
 Comparisons are used to compare values with eachother.

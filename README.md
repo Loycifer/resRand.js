@@ -52,7 +52,7 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 The `.addRule(...)` method adds a sorting rule to resRand's randomisation process.
 #####Syntax
 ```javascript
-resRand.addRule(function : rule[, int : range, bool : isInclusive])
+resRand.addRule(function: rule[, int: range, bool: isInclusive]);
 ```
 #####Parameters
 - **rule**  - *Required.* A function which takes two arguments and returns a boolean.  This function should compare aspects of its two arguments and return `true` if the comparison passes and `false` if the comparison fails. 
@@ -84,31 +84,60 @@ var myLastRule = function(element1, element2)
 // Ensure that no elements with matching 3rd characters will be touching
 resRand.addRule(myFirstRule); 
 // Ensure that no more than 3 elements with matching segments after the first '_' will exist in a row
-resRand.addRule(myFirstRule, 3); 
+resRand.addRule(mySecondRule, 3); 
  // Ensure that elements with matching .toneContour properties will be at least 4 spaces apart
-resRand.addRule(myFirstRule, 4, false);
+resRand.addRule(myLastRule, 4, false);
 ```
 ---
 
 ####.applyRules()
 #####Summary
+*Does not need to be called by the user.* The `.applyRules()` method enforces all added rules, and reorganises elements if necessary.  
 #####Syntax
-#####Parameters
-#####Example
+```javascript
+resRand.applyRules();
+```
 ---
 ####.checkElementAgainstPosition(...)
 #####Summary
+*Does not need to be called by the user.* The `.checkElementAgainstPosition(...)` method checks if an element can occupy a position in the array working list without breaking any rules.
 #####Syntax
+```javascript
+resRand.checkElementAgainstPosition(object: element, int: position);
+````
 #####Parameters
-#####Example
+- **element**  - *Required.* The contents of an array element.
+- **position** - *Required* An integer representing a position in the working list where the element will be projectedt.
 ---
 ####.export()
+#####Summary
+The `.export()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.getResult()`.
+#####Syntax
+```javascript
+resRand.export();
+```
+#####Example
+```javascript
+var myResults = resRand.export();
+//myResults now contains a randomised array
+```
+####.getResult()
+#####Summary
+The `.getResult()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.export()`.
+#####Syntax
+```javascript
+resRand.getResult();
+```
+#####Example
+```javascript
+var myResults = resRand.getResult();
+//myResults now contains a randomised array
+```
+####.go()
 #####Summary
 #####Syntax
 #####Parameters
 #####Example
-####.getResult()
-####.go(...)
 ####.import(...)
 ####.printCustom(...)
 ####.printTable(...)

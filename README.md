@@ -27,13 +27,14 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
     - .sourceList
     - .workingList
 - [JavaScript Quick Reference](#javascript-quick-reference)
-  - [Variable](#variable)
-  - [Comparison](#comparison)
-  - [Logic](#logic)
-  - [Boolean](#boolean)
-  - [String](#string)
-  - [Array](#array)
-  - [Function](#function)
+  - [Variable](#variable-)
+  - [Comparison](#comparison-)
+  - [Logic](#logic-)
+  - [Boolean](#boolean-)
+  - [If...else](#ifelse-)
+  - [String](#string-)
+  - [Array](#array-)
+  - [Function](#function-)
 
 
 

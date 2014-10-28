@@ -63,18 +63,22 @@ resRand.addRule(function : rule[, int : range, bool : isInclusive])
 ```javascript
 var myFirstRule = function(element1, element2)
 {
-  var isMatching = element1.substr(2,1) === element2.substr(2,1); // Comparing the 3rd character in each element 
-  return isMatching; // Returning the result of the comparison
+  var isMatching = element1.substr(2,1) === element2.substr(2,1); 
+  // Comparing the 3rd character in each element 
+  return isMatching; 
+  // Returning the result of the comparison
 };
 
 var mySecondRule = function(element1, element2)
 {
-  return (element1.split("_")[1] === element2.split("_")[1]); // Returning the result of comparing the characters between the first and second underscore 
+  return (element1.split("_")[1] === element2.split("_")[1]); 
+  // Returning the result of comparing the characters between the first and second underscore 
 };
 
 var myLastRule = function(element1, element2)
 {
-  return (element1.toneContour === element2.toneContour); // Returning the result of comparing the .toneContour properties of the elements
+  return (element1.toneContour === element2.toneContour); 
+  // Returning the result of comparing the .toneContour properties of the elements
 };
 
 resRand.addRule(myFirstRule); // Ensures that no elements with matching 3rd characters will be touching

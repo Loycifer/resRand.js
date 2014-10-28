@@ -107,7 +107,8 @@ resRand.checkElementAgainstPosition(object: element, int: position);
 ````
 #####Parameters
 - **element**  - *Required.* The contents of an array element.
-- **position** - *Required* An integer representing a position in the working list where the element will be projectedt.
+- **position** - *Required.* An integer representing a position in the working list where the element will be projected.
+
 ---
 ####.export()
 #####Summary
@@ -139,6 +140,28 @@ var myResults = resRand.getResult();
 #####Parameters
 #####Example
 ####.import(...)
+#####Summary
+#####Syntax
+```javascript
+resRand.import(array: userArray);
+```
+#####Parameters
+- **userArray** - *Required.* An array containing numbers, strings, or objects.  Possibly a list of filenames, or codes representing stimuli or participants.
+
+#####Example
+```javascript
+var stimulusList = [
+"SND01P00",
+"SND01P01",
+"SND01P02",
+...         // Shortened for readability
+"SND08P62",
+"SND08P63"];
+
+resRand.import(stimulusList);
+
+```
+---
 ####.printCustom(...)
 ####.printTable(...)
 ####.printToConsole()

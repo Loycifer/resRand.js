@@ -48,12 +48,16 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ###Methods
 ####.addRule(...)
 #####Summary
-The `.addRule()` method adds a sorting rule to resRand's randomisation process.
+The `.addRule(...)` method adds a sorting rule to resRand's randomisation process.
 #####Syntax
 ```javascript
-resRand.addRule(function : callback, int : range, bool : isInclusive)
+resRand.addRule(function : rule[, int : range, bool : isInclusive])
 ```
 #####Parameters
+- **rule**  - *Required.* A sorting function
+- **range** - *Optional.* The distance from an element to which the rule should be applied.
+- **isInclusive** - *Optional.*
+
 #####Example
 ####.applyRules()
 ####.checkElementAgainstPosition(...)

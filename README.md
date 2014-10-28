@@ -8,24 +8,24 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
   2. Importing your list of items
   3. Creating and applying sorting rules
   4. Retrieving your randomised list
-- [API]
-  - Methods
-    - .addRule(...)
-    - .applyRules()
-    - .checkElementAgainstPosition(...)
-    - .export()
-    - .getResult()
-    - .go(...)
-    - .import(...)
-    - .printCustom(...)
-    - .printTable(...)
-    - .printToConsole()
-    - .randomise()
-  - Properties
-    - .length
-    - .rules
-    - .sourceList
-    - .workingList
+- [API](#api)
+  - [Methods](#methods)
+    - [.addRule(...)](#addrule)
+    - [.applyRules()](#applyrules)
+    - [.checkElementAgainstPosition(...)](#checkelementagainstposition)
+    - [.export()](#export)
+    - [.getResult()](#getresult)
+    - [.go(...)](#go)
+    - [.import(...)](#import)
+    - [.printCustom(...)](#printcustom)
+    - [.printTable(...)](#printtable)
+    - [.printToConsole()](#printtoconsole)
+    - [.randomise()](#randomise)
+  - [Properties](#properties)
+    - [.length](#length)
+    - [.rules](#rules)
+    - [.sourceList](#sourcelist)
+    - [.workingList](#workinglist)
 - [JavaScript Quick Reference](#javascript-quick-reference)
   - [Variable](#variable-)
   - [Comparison](#comparison-)
@@ -41,6 +41,23 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ####Overview
 ####Tutorial
 ####API
+#####Methods
+#####.addRule(...)
+#####.applyRules()
+#####.checkElementAgainstPosition(...)
+#####.export()
+#####.getResult()
+#####.go(...)
+#####.import(...)
+#####.printCustom(...)
+#####.printTable(...)
+#####.printToConsole()
+#####.randomise()
+#####Properties
+#####.length
+#####.rules
+#####.sourceList
+#####.workingList
 
 ####JavaScript Quick Reference
 

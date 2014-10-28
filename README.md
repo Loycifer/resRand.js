@@ -150,13 +150,12 @@ resRand.import(array: userArray);
 
 #####Example
 ```javascript
-var stimulusList = [
-"SND01P00",
-"SND01P01",
-"SND01P02",
-...         // Shortened for readability
-"SND08P62",
-"SND08P63"];
+var stimulusList = ["SND01P00",
+                    "SND01P01",
+                    "SND01P02",
+                    ...         // Shortened for readability
+                    "SND08P62",
+                    "SND08P63"];
 
 resRand.import(stimulusList);
 

@@ -4,7 +4,28 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ###Contents
 - [Overview]
 - [Tutorial]
+  1. Using the template file resRand.html
+  2. Importing your list of items
+  3. Creating and applying sorting rules
+  4. Retrieving your randomised list
 - [API]
+  - Methods
+    - .addRule(...)
+    - .applyRules()
+    - .checkElementAgainstPosition(...)
+    - .export()
+    - .getResult()
+    - .go(...)
+    - .import(...)
+    - .printCustom(...)
+    - .printTable(...)
+    - .printToConsole()
+    - .randomise()
+  - Properties
+    - .length
+    - .rules
+    - .sourceList
+    - .workingList
 - [JavaScript Quick Reference](#javascript-quick-reference)
   - [Variable](#variable)
   - [Comparison](#comparison)
@@ -111,3 +132,21 @@ var areEqual = function(x,y) {return x===y}
 * `addToFive(11)` returns `16`
 * `areEqual("blue","yellow")` returns `false`
 
+---
+
+#####License
+
+Copyright :copyright: 2014  Loy Clements
+
+resRand.js is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>

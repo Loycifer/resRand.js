@@ -1,3 +1,5 @@
+This README should be complete by October 31.
+
 #resRand.js
 resRand.js is an easy-to-use JavaScript object for restricted randomization of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 
@@ -276,7 +278,7 @@ The '.workingList` property returns the current array.  If no randomisation or r
 
 JavaScript can be run in all modern web browsers without additional software installation.
 
-You should be familiar with the following JavaScript types.
+You should be familiar with the following JavaScript types and concepts.
 
 ---
 ###Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)

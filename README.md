@@ -71,7 +71,8 @@ var myFirstRule = function(element1, element2)
 
 var mySecondRule = function(element1, element2)
 {
-  // Return the result of comparing the characters between the first and second underscore 
+  // Return the result of comparing the characters between the 
+  // first and second underscore 
   return (element1.split("_")[1] === element2.split("_")[1]); 
 };
 
@@ -83,9 +84,11 @@ var myLastRule = function(element1, element2)
 
 // Ensure that no elements with matching 3rd characters will be touching
 resRand.addRule(myFirstRule); 
-// Ensure that no more than 3 elements with matching segments after the first '_' will exist in a row
+// Ensure that no more than 3 elements with matching segments after the 
+// first '_' will exist in a row
 resRand.addRule(mySecondRule, 3); 
- // Ensure that elements with matching .toneContour properties will be at least 4 spaces apart
+ // Ensure that elements with matching .toneContour properties will be at 
+ // least 4 spaces apart
 resRand.addRule(myLastRule, 4, false);
 ```
 ---
@@ -100,7 +103,7 @@ resRand.applyRules();
 ---
 ####.checkElementAgainstPosition(...)
 #####Summary
-*Does not need to be called by the user.* The `.checkElementAgainstPosition(...)` method checks if an element can occupy a position in the array working list without breaking any rules.
+*Does not need to be called by the user.* The `.checkElementAgainstPosition(...)` method checks if an element can occupy a position in the working list array without breaking any rules.
 #####Syntax
 ```javascript
 resRand.checkElementAgainstPosition(object: element, int: position);
@@ -158,6 +161,7 @@ var stimulusList = ["SND01P00",
                     "SND08P63"];
 
 resRand.import(stimulusList);
+// The resRand object can now work with the user-provided list.
 
 ```
 ---
@@ -179,7 +183,7 @@ You should be familiar with the following JavaScript types.
 
 ---
 ###Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-  A variable is a named container that holds any type of value or object.  Variables are declared using the keyword `var`.  It is important to remember that variable names are case-sensitive; `myVar` is not the same as `MyVar`.  Variable names are conventionally type in camelCase, but this is not a requirement of the language.  A variable declared inside a function is locally scoped; this means the variable will only be available from with the function.
+  A variable is a named container that holds any type of value or object.  Variables are declared using the keyword `var`.  It is important to remember that variable names are case-sensitive; `myVar` is not the same as `MyVar`.  Variable names are conventionally type in camelCase, but this is not a requirement of the language.  A variable declared inside a function is locally scoped; this means the variable will only be available from within its hosting function.
 ```javascript
 var myNumber = 2 + 3;
 var ten = 10;

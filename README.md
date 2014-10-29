@@ -240,10 +240,37 @@ var myResult = resRand.export();
 ```
 ---
 ###Properties
+---
 ####.length
+The `.length` property returns the length of the current array.  This property is read-only.
+#####Syntax
+`resRand.length;`
+#####Example
+```javascript
+resRand.import([10,20,30]);
+var listLength = resRand.legnth;
+// listLength contains the number 3
+```
+
+---
 ####.rules
+The `.rules` property returns the array of added rules.
+#####Syntax
+`resRand.rules;`
+
+---
 ####.sourceList
+The `.sourceList` property returns the unmodified imported array.
+#####Syntax
+`resRand.sourceList;`
+
+---
 ####.workingList
+The '.workingList` property returns the current array.  If no randomisation or rules have been applied, returns a copy of the unmodified imported array.
+#####Syntax
+`resRand.workingList;`
+
+---
 
 ##JavaScript Quick Reference
 

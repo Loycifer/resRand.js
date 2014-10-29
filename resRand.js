@@ -28,9 +28,10 @@
 	addRule: function(func, rangeInt, inclusive)
 	{
 	    var inclusion = (inclusive === undefined || inclusive === true) ? true : false;
+	    var range = (rangeInt === undefined)?1:rangeInt;
 	    var newRule = {
 		callback: func,
-		range: rangeInt,
+		range: range,
 		inclusive: inclusion
 	    };
 	    this.rules.push(newRule);
@@ -176,14 +177,16 @@
 	    //document.write("Sorted! Final configuration:");
 	    //document.write(this.workingList.toString().replace(/,/g, "<br>"));
 	},
-	go: function(randomise)
+	go: function()
 	{
-	    if (randomise === undefined || randomise === true)
-	    {
-		this.randomise();
-	    }
+	    this.randomise();
 	    this.applyRules();
 	    return this.workingList.slice();
+	},
+	goPrint: function(targetDOMElement)
+	{
+	  this.go();
+	  this.printTable(targetDOMElement);
 	},
 	export: function()
 	{
@@ -233,3 +236,5 @@
     });
     window["resRand"] = resRand;
 })(window);
+
+

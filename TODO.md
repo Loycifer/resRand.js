@@ -4,5 +4,5 @@ ToDo
 - [ ] Finish README
   - [ ] Finish overview
   - [ ] Finish Tutorial
-  - [ ] Finish API
+  - [X] Finish API
   - [X] Finish JS quick reference

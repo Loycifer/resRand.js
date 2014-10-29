@@ -6,3 +6,6 @@ ToDo
   - [ ] Finish Tutorial
   - [X] Finish API
   - [X] Finish JS quick reference
+    - [ ] Add section about general syntax and scope
+    - [ ] Add section about DOM elements
+    - [ ] Expand section about functions

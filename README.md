@@ -296,7 +296,7 @@ var lastName = "Dover";
 
 ---
 ###Comparison [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
-Comparisons are used to compare values with eachother.  The return type of a comparison is a boolean (`true` or `false`).
+Comparisons are used to compare values with each other.  The return type of a comparison is a boolean (`true` or `false`).
 
 Symbol | Meaning
 :----:|----
@@ -384,7 +384,7 @@ var myString = "Hello Worf!";
 ---
 
 ###Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-An array is an ordered list of elements, enclosed with square brackets, seperated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  An element can be accessed by entering the number in square brackets after the array name.  JavaScript supports arrays with multiple element types.
+An array is an ordered list of elements, enclosed with square brackets, separated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  An element can be accessed by entering the number in square brackets after the array name.  JavaScript supports arrays with multiple element types.
 ```javascript
 var myArray = [1,2,"three",Math.PI,[true,false]]
 ~ myArray[0] returns 1

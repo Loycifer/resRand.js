@@ -165,7 +165,7 @@ The `.goPrint(...)` combines the `.go()` method and the `.printTable(...)` metho
 resRand.goPrint([node: targetDOMElement]);
 ```
 #####Parameters
-**targetDOMElement** - *Optional* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+**targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
 #####Example
 ```javascript
 // Print table to document body
@@ -202,10 +202,31 @@ resRand.import(stimulusList);
 ---
 ####.printCustom(...)
 #####Summary
-
+The `.printCustom(...)` method provides a more flexible means of displaying results than `.printTable(...)`.  This method requires a function that will run once per element.
 #####Syntax
+```javascript
+resRand.printCustom(function: callback[, string: header, string: footer, node: targetDOMElement])
+```
 #####Parameters
+**callback** - *Required.* A function which takes an array element as an argument, and returns a string containing the desired HTML code.
+**header** - *Optional.* A string which contains the HTML code to be printed before the array elements.  This string might contain an opening `<table>` tag and column headers. The default value is an empty string.
+**footer** - *Optional.* A string which contains the HTML code to be printed after the array elements. This string might contain a closing `</table>` tag. The default value is an empty string.
+**targetDOMElement** - *Optional.* A DOM element in which the result should be printed.  The result appends itself to the innerHTML of the DOM element. The default value is `document.body`.
 #####Example
+```javascript
+var printFunction = function(element)
+{
+  var correctAnswer = element.substr(3,1) < 5;
+  var thisLine = "<tr><td>" + element + "</td><td>" + correctAnswer + "</td></tr>";
+  return thisLine;
+};
+var header = "<table>";
+var footer = "</table>";
+var targetNode = document.getElementById("tableDiv");
+
+resRand.printCustom(printFunction, header, footer, targetNode);
+```
+---
 ####.printTable(...)
 #####Summary
 #####Syntax

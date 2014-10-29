@@ -51,7 +51,6 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ###Methods
 ---
 ####.addRule(...)
-#####Summary
 The `.addRule(...)` method adds a sorting rule to resRand's randomisation process.
 #####Syntax
 `resRand.addRule(function: rule[, int: range, bool: isInclusive]);`
@@ -95,14 +94,12 @@ resRand.addRule(myLastRule, 4, false);
 ---
 
 ####.applyRules()
-#####Summary
 *Does not need to be called by the user.* The `.applyRules()` method enforces all added rules, and reorganises elements if necessary.  
 #####Syntax
 `resRand.applyRules();`
 
 ---
 ####.checkElementAgainstPosition(...)
-#####Summary
 *Does not need to be called by the user.* The `.checkElementAgainstPosition(...)` method checks if an element can occupy a position in the working list array without breaking any rules.
 #####Syntax
 `resRand.checkElementAgainstPosition(object: element, int: position);`
@@ -112,7 +109,6 @@ resRand.addRule(myLastRule, 4, false);
 
 ---
 ####.export()
-#####Summary
 The `.export()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.getResult()`.
 #####Syntax
 `resRand.export();`
@@ -123,7 +119,6 @@ var myResults = resRand.export();
 ```
 ---
 ####.getResult()
-#####Summary
 The `.getResult()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.export()`.
 #####Syntax
 `resRand.getResult();`
@@ -134,7 +129,6 @@ var myResults = resRand.getResult();
 ```
 ---
 ####.go()
-#####Summary
 The `.go()` method runs the randomisation `.randomise()` and sorting `.applyRules()` processes on the imported array, and returns a copy of the randomised array.  This method should be called after adding rules to the object with `.addRule(...)`.
 #####Syntax
 `resRand.go();`
@@ -147,7 +141,6 @@ var myResult = resRand.go();
 ```
 ---
 ####.goPrint(...)
-#####Summary
 The `.goPrint(...)` combines the `.go()` method and the `.printTable(...)` method, and returns a copy of the randomised array.  This is the most straightforward method for executing and printing randomization.  This method should be called after adding rules to the object with `.addRule(...)`.
 #####Syntax
 `resRand.goPrint([node: targetDOMElement]);`
@@ -166,7 +159,6 @@ var myResult = resRand.goPrint(targetNode);
 
 ---
 ####.import(...)
-#####Summary
 The `.import(...)` method takes a user-specified array and inserts it into the resRand object for randomisation.  
 #####Syntax
 `resRand.import(array: userArray);`
@@ -188,7 +180,6 @@ resRand.import(stimulusList);
 ```
 ---
 ####.printCustom(...)
-#####Summary
 The `.printCustom(...)` method provides a more flexible means of displaying results than `.printTable(...)`.  This method requires a function that will run once per element.
 #####Syntax
 `resRand.printCustom(function: callback[, string: header, string: footer, node: targetDOMElement])`
@@ -215,17 +206,14 @@ resRand.printCustom(printFunction, header, footer, targetNode);
 ```
 ---
 ####.printTable(...)
-#####Summary
 #####Syntax
 #####Parameters
 #####Example
 ####.printToConsole()
-#####Summary
 #####Syntax
 #####Parameters
 #####Example
 ####.randomise()
-#####Summary
 #####Syntax
 #####Parameters
 #####Example

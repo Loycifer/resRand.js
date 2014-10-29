@@ -165,7 +165,7 @@ The `.goPrint(...)` combines the `.go()` method and the `.printTable(...)` metho
 resRand.goPrint([node: targetDOMElement]);
 ```
 #####Parameters
-**targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+- **targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
 #####Example
 ```javascript
 // Print table to document body
@@ -175,6 +175,7 @@ resRand.goPrint();
 var targetNode = document.getElementById("ResultsDiv");
 var myResult = resRand.goPrint(targetNode);
 ```
+
 ---
 ####.import(...)
 #####Summary

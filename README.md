@@ -207,11 +207,13 @@ The `.printCustom(...)` method provides a more flexible means of displaying resu
 ```javascript
 resRand.printCustom(function: callback[, string: header, string: footer, node: targetDOMElement])
 ```
+
 #####Parameters
-**callback** - *Required.* A function which takes an array element as an argument, and returns a string containing the desired HTML code.
-**header** - *Optional.* A string which contains the HTML code to be printed before the array elements.  This string might contain an opening `<table>` tag and column headers. The default value is an empty string.
-**footer** - *Optional.* A string which contains the HTML code to be printed after the array elements. This string might contain a closing `</table>` tag. The default value is an empty string.
-**targetDOMElement** - *Optional.* A DOM element in which the result should be printed.  The result appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+- **callback** - *Required.* A function which takes an array element as an argument, and returns a string containing the desired HTML code.
+- **header** - *Optional.* A string which contains the HTML code to be printed before the array elements.  This string might contain an opening `<table>` tag and column headers. The default value is an empty string.
+- **footer** - *Optional.* A string which contains the HTML code to be printed after the array elements. This string might contain a closing `</table>` tag. The default value is an empty string.
+- **targetDOMElement** - *Optional.* A DOM element in which the result should be printed.  The result appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+
 #####Example
 ```javascript
 var printFunction = function(element)

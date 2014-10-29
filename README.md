@@ -8,6 +8,9 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
   2. [Importing your list of items](#importing-your-list-of-items)
   3. [Creating and applying sorting rules](#creating-and-applying-sorting-rules)
   4. [Retrieving your randomised list](#retrieving-your-randomised-list)
+  5. [(Optional) Using .printCustom(...)]
+  6. [(Optional) Organising without randomising]
+  7. [(Optional) Manually using the resulting array]
 - [API](#api)
   - [Methods](#methods)
     - [.addRule(...)](#addrule)
@@ -125,6 +128,7 @@ resRand.export();
 var myResults = resRand.export();
 //myResults now contains a randomised array
 ```
+---
 ####.getResult()
 #####Summary
 The `.getResult()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.export()`.
@@ -137,13 +141,25 @@ resRand.getResult();
 var myResults = resRand.getResult();
 //myResults now contains a randomised array
 ```
+---
 ####.go()
 #####Summary
+The `.go()` method runs the randomisation `.randomise()` and sorting `.applyRules()` processes on the imported array, and returns a copy of the randomised array.  This method should be called after adding rules to the object with `.addRule(...)`.
 #####Syntax
-#####Parameters
+```javascript
+resRand.go();
+```
 #####Example
+```javascript
+resRand.import(userArray);
+resRand.addRule(myRule, 1);
+var myResult = resRand.go();
+// myResult contains a randomised copy of userArray which conforms to myRule
+```
+---
 ####.import(...)
 #####Summary
+The `.import(...)` method takes a user-specified array and inserts it into the resRand object for randomisation.  
 #####Syntax
 ```javascript
 resRand.import(array: userArray);
@@ -166,9 +182,25 @@ resRand.import(stimulusList);
 ```
 ---
 ####.printCustom(...)
+#####Summary
+#####Syntax
+#####Parameters
+#####Example
 ####.printTable(...)
+#####Summary
+#####Syntax
+#####Parameters
+#####Example
 ####.printToConsole()
+#####Summary
+#####Syntax
+#####Parameters
+#####Example
 ####.randomise()
+#####Summary
+#####Syntax
+#####Parameters
+#####Example
 ###Properties
 ####.length
 ####.rules

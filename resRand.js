@@ -187,6 +187,7 @@
 	{
 	  this.go();
 	  this.printTable(targetDOMElement);
+	  return this.workingList.slice();
 	},
 	export: function()
 	{
@@ -208,16 +209,16 @@
 	    htmlString += "</table>";
 	    DOMSpace.innerHTML += htmlString;
 	},
-	printCustom: function(targetDOMElement,callback,header,footer)
+	printCustom: function(callback,header,footer,targetDOMElement)
 	{
 	    var DOMSpace = targetDOMElement || document.body;
-	    var htmlString =header;
+	    var htmlString = (header===undefined)?"":header;
 	    var listLength = this.workingList.length;
 	    for (var i = 0; i < listLength; i++)
 	    {
 		htmlString += callback(this.workingList[i]);
 	    }
-	    htmlString += footer;
+	    htmlString += (footer === undefined)?"":footer;
 	    DOMSpace.innerHTML += htmlString;
 	},
 	printToConsole: function()
@@ -228,7 +229,7 @@
 		console.log(this.workingList[i]);
 	    }
 	},
-	length: {}
+	length: 0
 
     };
     Object.defineProperty(resRand, "length", {

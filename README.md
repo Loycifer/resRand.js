@@ -157,6 +157,25 @@ var myResult = resRand.go();
 // myResult contains a randomised copy of userArray which conforms to myRule
 ```
 ---
+####.goPrint(...)
+#####Summary
+The `.goPrint(...)` combines the `.go()` method and the `.printTable(...)` method, and returns a copy of the randomised array.  This is the most straightforward method for executing and printing randomization.  This method should be called after adding rules to the object with `.addRule(...)`.
+#####Syntax
+```javascript
+resRand.goPrint([node: targetDOMElement]);
+```
+#####Parameters
+**targetDOMElement** - *Optional* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+#####Example
+```javascript
+// Print table to document body
+resRand.goPrint();
+
+// Print table to a DOM element with id "ResultsDiv" and store the resulting array in myResult
+var targetNode = document.getElementById("ResultsDiv");
+var myResult = resRand.goPrint(targetNode);
+```
+---
 ####.import(...)
 #####Summary
 The `.import(...)` method takes a user-specified array and inserts it into the resRand object for randomisation.  
@@ -183,6 +202,7 @@ resRand.import(stimulusList);
 ---
 ####.printCustom(...)
 #####Summary
+
 #####Syntax
 #####Parameters
 #####Example

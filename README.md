@@ -94,7 +94,7 @@ resRand.addRule(myLastRule, 4, false);
 ---
 
 ####.applyRules()
-*Does not need to be called by the user.* The `.applyRules()` method enforces all added rules, and reorganises elements if necessary.  
+The `.applyRules()` method enforces all added rules, and reorganises elements if necessary.  This method is called during `.go()` and `.goPrint(...)`.  
 #####Syntax
 `resRand.applyRules();`
 
@@ -206,17 +206,39 @@ resRand.printCustom(printFunction, header, footer, targetNode);
 ```
 ---
 ####.printTable(...)
+The `.printTable(...)` methods prints current array to the document as an HTML table.  Tables are parsed correctly when copied from the web page into spreadsheet software.
 #####Syntax
+`resRand.printTable([node: targetDOMElement]);`
 #####Parameters
+- **targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+
 #####Example
+```javascript
+// Print the table to the document body
+resRand.printTable();
+// Print the table to a DOM element with id "ResultsDiv"
+var targetNode = document.getElementById("ResultsDiv");
+resRand.printTable(targetNode);
+```
+---
 ####.printToConsole()
+The `.printToConsole()` method outputs the contents of the current array to the JavaScript console.
 #####Syntax
-#####Parameters
-#####Example
+`resRand.printToConsole();`
+
+---
 ####.randomise()
+The `.randomise()` method randomises the current array without applying any rules.
 #####Syntax
-#####Parameters
+`resRand.randomise();`
 #####Example
+```javascript
+resRand.import([1,2,3,4,5,6]);
+resRand.randomise();
+var myResult = resRand.export();
+// myResult will contain somthing like [5.2.1.4.6.3]
+```
+---
 ###Properties
 ####.length
 ####.rules

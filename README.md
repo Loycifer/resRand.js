@@ -166,6 +166,7 @@ resRand.goPrint([node: targetDOMElement]);
 ```
 #####Parameters
 - **targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
+
 #####Example
 ```javascript
 // Print table to document body

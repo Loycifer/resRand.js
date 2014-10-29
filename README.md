@@ -278,7 +278,7 @@ The '.workingList` property returns the current array.  If no randomisation or r
 
 JavaScript can be run in all modern web browsers without additional software installation.
 
-You should be familiar with the following JavaScript types and concepts.
+You should be familiar with the following JavaScript types and concepts.  If you want more information on a concept, clicking the [[?]](#) icon will redirect you to a useful reference page at [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
 ---
 ###Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)

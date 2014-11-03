@@ -46,7 +46,46 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ##Overview
 ##Tutorial
 ###Using the template file resRand.html
+Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser; however, doing so now will produce nothing but an empty page.  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.
+
+Inside *resRand.html* you should find two `<script>` blocks: one at line 8 and one at line 9.  The first one loads the file *resRand.min.js*, which contains the resRand object in compressed JavaScript.  If you ever wish to make changes to the resRand.js source code, you will need to update this line to load *resRand.js*, but you can leave it alone for now.
+
+The second `<scrip>` block is where you will be entering your code.  There is already a bit of code there to help highlight the structure of the script.  When you're ready to get your hands dirty, move on to the next part of the tutorial. And maybe clean your keyboard.
+
 ###Importing your list of items
+
+```javascript
+var resRand; //Do not change or remove this line.
+
+var userArray = [
+		// Fill this array with to be randomised numbers, strings, or objects, seperated by a comma.
+	    ];
+	    
+resRand.import(userArray); // Import your array into the resRand object.
+```
+
+A variable called `userArray` has been declared to hold your array.  You can rename this variable to anything you want, as long as you also rename it in the `resRand.import()` function call.  You array should contain your objects, separated by a comma.  For example, if you have stimuli named SH01P01, SH01P02, and SH01P03, you would build an array of strings like so:
+
+```javascript
+var userArray = [
+"SH01P01",
+"SH01P02",
+"SH01P03"
+      ];
+```
+Of course, you'll probably have more than 3 stimuli, so this step may take long if you have no efficient way of generating this type of array syntax.  You also have to option of entering your stimuli in a single string and splitting it into an array by a delimeter like so:
+
+```javascript
+var userString = "SH01P01, SH01P02, SH01P03";
+var userArray = userString.split(", "); // Note that the delimeter is a comma AND a space
+```
+When naming your stimuli, it's a good idea to pad your numbers with zeros.  For example, if you have 100 stimuli types numbered from 1 to 100, number one should be written as `001`, two as `002` and so on.  This makes the names easier for code to understand, and keeps them all at the same length.  Starting your numbers at 0 may also help keep names short; 1 to 100 would become 0 to 99, thus only requiring one zero in front of single-digit numbers.
+
+
+
+
+
+
 ###Creating and applying sorting rules
 ###Retrieving your randomised list
 ##API

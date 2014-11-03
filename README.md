@@ -46,7 +46,7 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 ##Overview
 ##Tutorial
 ###Using the template file resRand.html
-Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser; however, doing so now will produce nothing but an empty page.  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.
+Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser.  Do so now, and you will see the test "Number of objects: 0".  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.
 
 Inside *resRand.html* you should find two `<script>` blocks: one at line 8 and one at line 9.  The first one loads the file *resRand.min.js*, which contains the resRand object in compressed JavaScript.  If you ever wish to make changes to the resRand.js source code, you will need to update this line to load *resRand.js*, but you can leave it alone for now.
 
@@ -64,7 +64,7 @@ var userArray = [
 resRand.import(userArray); // Import your array into the resRand object.
 ```
 
-A variable called `userArray` has been declared to hold your array.  You can rename this variable to anything you want, as long as you also rename it in the `resRand.import()` function call.  You array should contain your objects, separated by a comma.  For example, if you have stimuli named SH01P01, SH01P02, and SH01P03, you would build an array of strings like so:
+A variable called `userArray` has been declared to hold your array.  You can rename this variable to anything you want, as long as you also rename it in the `resRand.import()` function call.  This array can contain any kind of objects, separated by commas.  For example, if you have stimuli named SH01P01, SH01P02, and SH01P03, you would build an array of strings like so:
 
 ```javascript
 var userArray = [
@@ -80,6 +80,10 @@ var userString = "SH01P01, SH01P02, SH01P03";
 var userArray = userString.split(", "); // Note that the delimeter is a comma AND a space
 ```
 When naming your stimuli, it's a good idea to pad your numbers with zeros.  For example, if you have 100 stimuli types numbered from 1 to 100, number one should be written as `001`, two as `002` and so on.  This makes the names easier for code to understand, and keeps them all at the same length.  Starting your numbers at 0 may also help keep names short; 1 to 100 would become 0 to 99, thus only requiring one zero in front of single-digit numbers.
+
+You may also choose to separate segments in your stimuli names using a delimeter, such as SH-2-P-26.  This can also be be easily parsed by JavaScript, and does not require any zero-padding.
+
+Once you've entered all your values into the array, save and run *resRand.html*.  You should see your table of your items, randomised with no restrictions.  If you refresh the page, the list will randomise itself again.  Check the reported number of objects at the top of the page to make sure you've correctly entered the right amount of stimuli.  Once you've confirmed that your stimuli have been properly entered into the array, it is time to create sorting rules to restrict randomisation.
 
 
 

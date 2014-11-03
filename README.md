@@ -208,11 +208,24 @@ var someCreativeName = function(element1, element2) {
 };
 resRand.addRule(someCreativeName, 2, true);
 ```
-You can add as many rules as you need.  Note that these rules are meant to help randomisation, and will not operate correctly if you try to intentionally group elements together by inverting the result of the comparison statements inside the rule functions.
+You can add as many rules as you need.  Different rules can have different ranges and be of different types, and resRand will try its hardest to randomise your list according to those rules.  Note that these rules are meant to help randomisation, and will not operate correctly if you try to intentionally group elements together by inverting the result of the comparison statements inside the rule functions.
 
-If you think you've correctly set up you rule/rules, you can save and run *resRand.html* to check the results.
+If you think you've correctly set up you rule/rules, you can save and run *resRand.html* to check the results.  Now go take a little break. You did a lot I think.
 
 ###Retrieving your randomised list
+```javascript
+document.write("Number of objects: " + resRand.length);
+resRand.goPrint();
+```
+If you're here, you've probably finished adding your rules to resRand, and seen the results of your labour.  If you've constructed your rules properly, the randomised list should be exactly as you need it.  You can copy the contents of your table into spreadsheet software like Microsoft Excel, and it will remain its structure.
+
+Once you're certain that your code is working properly and your stimulus list is correct, you can comment out the line which reads `document.write("Number of objects: " + resRand.length);` by typing `//` before it.  This can make copying out the results easier by allowing the Ctrl+A shortcut for *select all* to work as desired.
+
+If you want resRand to print 3 blocks at once, you can simply type `resRand.goPrint();` three times.  Currently, there is no rule-checking between the edges of blocks. This is a planned feature, however.
+
+Congratulations! You made it! Now you may go spend weeks and weeks in the lab running your experiment.
+
+
 ##API
 ###Methods
 ---

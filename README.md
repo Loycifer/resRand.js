@@ -105,17 +105,112 @@ var myRule1 = function(element1, element2)
 	};
 
 var myRule2 = function(element1, element2)
-	    {
+	{
 		//The previous rule can be shortened to the following code and still perform the same
 		return (element1.substr(1, 2) === element2.substr(1, 2));
-	    };
+	};
 
-	    //Once you've built all your rules, add them to the resRand object.
+//Once you've built all your rules, add them to the resRand object.
 
-	    //resRand.addRule(myRule1, 2); //No more than two matching elements in a row
-	    //resRand.addRule(myRule1, 2, false); //No less than 2 spaces between matching elements
+//resRand.addRule(myRule1, 2); //No more than two matching elements in a row
+//resRand.addRule(myRule2, 2, false); //No less than 2 spaces between matching elements
+```
+There are two sample rule functions in the template, `myRule1` and `myRule2`.  These two functions produce identical results, but ae written with different syntax.  You may delete them and make your own, or overwrite them as you see fit.  It is recommended to store your functions in variables so that they may be easily edited passed into `resRand.addRule()`.
+
+A rule function must take two arguments.  The first argument, called `element1` in the sample functions, will be compared to the second argument, `element2`.  All your rule functions should begin like this:
+```javascript
+var someCreativeName = function(element1, element2) {
+
+};
 ```
 
+The body of the function contains the comparison logic.  In most cases, you will want to check aspects of stimuli names for equality.  Let's say you have stimuli named SH01P01 through to SH30P12, and you want to compare the numbers between SH and P.  Since the first character of a string is character 0, the numbers reside at characters 2 and 3.  You can extract those characters by using the [.substr()](#string-) method, passing in as arguments the position of the first character you wish to extract, and the number of characters you wish to extract.  Calling this method on you arguments and storing the results in variables would look like this:
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstNumber = element1.substr(2,2);
+	var secondNumber = element2.substr(2,2);
+};
+```
+If, instead of zero-padding, you used delimiters in your stimuli names, you will want to use the [.split()](#string-) method.  If your stimuli have the structure SH-2-P-38, and you wish to compare the number between SH and P, you should split the string by the "-" character, and access element 1 (the second element) of the result.  
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstBang = element1.split("-");
+	var firstNumber = firstBang[1];
+	var secondBang = element2.split("-");
+	var secondNumber = firstBang[1];
+};
+```
+This can also be written like so:
+
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstNumber = element1.split("-")[1];
+	var secondNumber = element2.split("-")[1];
+};
+```
+If you're using an array of JavaScript objects as your input, you can extract their properties for comparison in much the same way:
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstNumber = element1.waveForm;
+	var secondNumber = element2.waveForm;
+};
+```
+Once you've extracted the necessary information and stored them in variables, it is time to return the result.  In most cases, you will want to check if the extracted strings or numbers are identical.  Strict equality is checked in JavaScript using `===`.  Storing the comparison result in a variable and returning the variable would look like this:
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstNumber = element1.substr(2,2);
+	var secondNumber = element2.substr(2,2);
+	var isMatching = firstNumber === secondNumber;
+	return isMatching;
+};
+```
+The function can also return the comparison without an intermediate variable:
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstNumber = element1.substr(2,2);
+	var secondNumber = element2.substr(2,2);
+	return (firstNumber === secondNumber);
+};
+```
+In fact, the function can even return the result of the process without using any intermediary variables:
+```javascript
+var someCreativeName = function(element1, element2) {
+	return (element1.substr(2,2) === element2.substr(2,2));
+};
+```
+You should do whatever you feel most comfortable doing.
+
+Now you need to add the rule to the resRand object. You do this using the `resRand.addRule()` method.  This method takes three arguments: your rule function, an integer representing the range of the rule, and a boolean specifying whether or not the rule is inclusive.
+
+If you just need the rule to make sure that no matching elements are touching eachother, you can write:
+```javascript
+resRand.addRule(someCreatuveName);
+```
+You can also have a rule make sure that no more than a certain amount of matching element will appear in a row (inclusive rule), or that matching elements will have a certain minimum distance between them (exclusive rule).  To have no more than 4 matching elements in a row, you would use this:
+```javascript
+resRand.addRule(someCreatuveName,4);
+```
+or
+```javascript
+resRand.addRule(someCreatuveName,4,true);
+```
+To make sure that matching elements have at least 5 non-matching elements between them, use this:
+```javascript
+resRand.addRule(someCreatuveName,5,false);
+```
+You must call the `.addRule()` method after defining the rule function.  The structure should look something like this:
+```javascript
+var someCreativeName = function(element1, element2) {
+	var firstNumber = element1.substr(2,2);
+	var secondNumber = element2.substr(2,2);
+	var isMatching = firstNumber === secondNumber;
+	return isMatching;
+};
+resRand.addRule(someCreativeName, 2, true);
+```
+You can add as many rules as you need.  Note that these rules are meant to help randomisation, and will not operate correctly if you try to intentionally group elements together by inverting the result of the comparison statements inside the rule functions.
+
+If you think you've correctly set up you rule/rules, you can save and run *resRand.html* to check the results.
 
 ###Retrieving your randomised list
 ##API

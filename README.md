@@ -53,7 +53,7 @@ The second `<scrip>` block is where you will be entering your code.  There is al
 var resRand; //Do not change or remove this line.
 
 var userArray = [
-		// Fill this array with to be randomised numbers, strings, or objects, seperated by a comma.
+		// Fill this array with to be randomised numbers, strings, or objects, separated by a comma.
 	    ];
 	    
 resRand.import(userArray); // Import your array into the resRand object.

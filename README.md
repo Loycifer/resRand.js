@@ -217,13 +217,21 @@ If you think you've correctly set up you rule/rules, you can save and run *resRa
 document.write("Number of objects: " + resRand.length);
 resRand.goPrint();
 ```
-If you're here, you've probably finished adding your rules to resRand, and seen the results of your labour.  If you've constructed your rules properly, the randomised list should be exactly as you need it.  You can copy the contents of your table into spreadsheet software like Microsoft Excel, and it will remain its structure.
+If you're here, you've probably finished adding your rules to resRand, and seen the results of your labour.  If you've constructed your rules properly, the randomised list should be exactly as you need it.  You can copy the contents of your table into spreadsheet software like Microsoft Excel, and it will retain its structure.
 
 Once you're certain that your code is working properly and your stimulus list is correct, you can comment out the line which reads `document.write("Number of objects: " + resRand.length);` by typing `//` before it.  This can make copying out the results easier by allowing the Ctrl+A shortcut for *select all* to work as desired.
 
 If you want resRand to print 3 blocks at once, you can simply type `resRand.goPrint();` three times.  Currently, there is no rule-checking between the edges of blocks. This is a planned feature, however.
 
-Congratulations! You made it! Now you may go spend weeks and weeks in the lab running your experiment.
+If you wish to do something with the result besides printing the table to the document, replace `resRand.goPrint();` with this:
+```javascript
+var myResults = resRand.go();
+```
+Now, the variable `myResults` contains the randomised array produced by resRand.
+
+You can also specify a custom method of printing your results.  This way, you can have resRand print out a more complete table for use in your project. See the [.printCustom(...)](#printcustom) reference for information on how to do this.
+
+Congratulations! You've made it! Now you may go spend weeks and weeks in the lab running your experiment.
 
 
 ##API

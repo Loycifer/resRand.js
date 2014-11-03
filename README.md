@@ -10,9 +10,6 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
   2. [Importing your list of items](#importing-your-list-of-items)
   3. [Creating and applying sorting rules](#creating-and-applying-sorting-rules)
   4. [Retrieving your randomised list](#retrieving-your-randomised-list)
-  5. [(Optional) Using .printCustom(...)]
-  6. [(Optional) Organising without randomising]
-  7. [(Optional) Manually using the resulting array]
 - [API](#api)
   - [Methods](#methods)
     - [.addRule(...)](#addrule)

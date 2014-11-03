@@ -91,6 +91,32 @@ Once you've entered all your values into the array, save and run *resRand.html*.
 
 
 ###Creating and applying sorting rules
+
+```javascript
+//Create sorting rules for your array
+
+var myRule1 = function(element1, element2)
+	{
+		//This function should compare elements or parts of elements.  If the elements match, the rule is considered broken.  This function must RETURN the boolean result of this comparison: true if elements match, false if elements do not match.
+		var letters1 = element1.substr(1, 2);
+		var letters2 = element2.substr(1, 2);
+		var matches = letters1 === letters2;
+		return matches;
+	};
+
+var myRule2 = function(element1, element2)
+	    {
+		//The previous rule can be shortened to the following code and still perform the same
+		return (element1.substr(1, 2) === element2.substr(1, 2));
+	    };
+
+	    //Once you've built all your rules, add them to the resRand object.
+
+	    //resRand.addRule(myRule1, 2); //No more than two matching elements in a row
+	    //resRand.addRule(myRule1, 2, false); //No less than 2 spaces between matching elements
+```
+
+
 ###Retrieving your randomised list
 ##API
 ###Methods

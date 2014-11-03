@@ -1,5 +1,3 @@
-This README should be complete by October 31.
-
 #resRand.js
 resRand.js is an easy-to-use JavaScript object for restricted randomization of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 

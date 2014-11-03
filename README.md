@@ -68,15 +68,15 @@ var userArray = [
 "SH01P03"
       ];
 ```
-Of course, you'll probably have more than 3 stimuli, so this step may take long if you have no efficient way of generating this type of array syntax.  You also have to option of entering your stimuli in a single string and splitting it into an array by a delimeter like so:
+Of course, you'll probably have more than 3 stimuli, so this step may take long if you have no efficient way of generating this type of array syntax.  You also have to option of entering your stimuli in a single string and splitting it into an array by a delimiter like so:
 
 ```javascript
 var userString = "SH01P01, SH01P02, SH01P03";
-var userArray = userString.split(", "); // Note that the delimeter is a comma AND a space
+var userArray = userString.split(", "); // Note that the delimiter is a comma AND a space
 ```
 When naming your stimuli, it's a good idea to pad your numbers with zeros.  For example, if you have 100 stimuli types numbered from 1 to 100, number one should be written as `001`, two as `002` and so on.  This makes the names easier for code to understand, and keeps them all at the same length.  Starting your numbers at 0 may also help keep names short; 1 to 100 would become 0 to 99, thus only requiring one zero in front of single-digit numbers.
 
-You may also choose to separate segments in your stimuli names using a delimeter, such as SH-2-P-26.  This can also be be easily parsed by JavaScript, and does not require any zero-padding.
+You may also choose to separate segments in your stimuli names using a delimiter, such as SH-2-P-26.  This can also be easily parsed by JavaScript, and does not require any zero-padding.
 
 Once you've entered all your values into the array, save and run *resRand.html*.  You should see your table of your items, randomised with no restrictions.  If you refresh the page, the list will randomise itself again.  Check the reported number of objects at the top of the page to make sure you've correctly entered the right amount of stimuli.  Once you've confirmed that your stimuli have been properly entered into the array, it is time to create sorting rules to restrict randomisation.
 
@@ -110,7 +110,7 @@ var myRule2 = function(element1, element2)
 //resRand.addRule(myRule1, 2); //No more than two matching elements in a row
 //resRand.addRule(myRule2, 2, false); //No less than 2 spaces between matching elements
 ```
-There are two sample rule functions in the template, `myRule1` and `myRule2`.  These two functions produce identical results, but ae written with different syntax.  You may delete them and make your own, or overwrite them as you see fit.  It is recommended to store your functions in variables so that they may be easily edited passed into `resRand.addRule()`.
+There are two sample rule functions in the template, `myRule1` and `myRule2`.  These two functions produce identical results, but are written with different syntax.  You may delete them and make your own, or overwrite them as you see fit.  It is recommended to store your functions in variables so that they may be easily edited passed into `resRand.addRule()`.
 
 A rule function must take two arguments.  The first argument, called `element1` in the sample functions, will be compared to the second argument, `element2`.  All your rule functions should begin like this:
 ```javascript
@@ -177,7 +177,7 @@ You should do whatever you feel most comfortable doing.
 
 Now you need to add the rule to the resRand object. You do this using the `resRand.addRule()` method.  This method takes three arguments: your rule function, an integer representing the range of the rule, and a boolean specifying whether or not the rule is inclusive.
 
-If you just need the rule to make sure that no matching elements are touching eachother, you can write:
+If you just need the rule to make sure that no matching elements are touching each other, you can write:
 ```javascript
 resRand.addRule(someCreatuveName);
 ```
@@ -214,7 +214,7 @@ resRand.goPrint();
 ```
 If you're here, you've probably finished adding your rules to resRand, and seen the results of your labour.  If you've constructed your rules properly, the randomised list should be exactly as you need it.  You can copy the contents of your table into spreadsheet software like Microsoft Excel, and it will retain its structure.
 
-Once you're certain that your code is working properly and your stimulus list is correct, you can comment out the line which reads `document.write("Number of objects: " + resRand.length);` by typing `//` before it.  This can make copying out the results easier by allowing the Ctrl+A shortcut for *select all* to work as desired.
+Once you're certain that your code is working properly and your stimulus list is correct, you can comment out the line which reads `document.write("Number of objects: " + resRand.length);` by typing `//` before it.  This can make copying out the results easier by allowing the Ctrl+a shortcut for *select all* to work as desired.
 
 If you want resRand to print 3 blocks at once, you can simply type `resRand.goPrint();` three times.  Currently, there is no rule-checking between the edges of blocks. This is a planned feature, however.
 

@@ -45,7 +45,7 @@ Once you have downloaded the repository .zip file [master.zip](https://github.co
 
 Inside *resRand.html* you should find two `<script>` blocks: one at line 8 and one at line 9.  The first one loads the file *resRand.min.js*, which contains the resRand object in compressed JavaScript.  If you ever wish to make changes to the resRand.js source code, you will need to update this line to load *resRand.js*, but you can leave it alone for now.
 
-The second `<scrip>` block is where you will be entering your code.  There is already a bit of code there to help highlight the structure of the script.  When you're ready to get your hands dirty, move on to the next part of the tutorial. And maybe clean your keyboard.
+The second `<script>` block is where you will be entering your code.  There is already a bit of code there to help highlight the structure of the script.  When you're ready to get your hands dirty, move on to the next part of the tutorial. And maybe clean your keyboard.
 
 ###Importing your list of items
 

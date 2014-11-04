@@ -152,7 +152,7 @@ var someCreativeName = function(element1, element2) {
 	var secondNumber = element2.waveForm;
 };
 ```
-Once you've extracted the necessary information and stored them in variables, it is time to return the result.  In most cases, you will want to check if the extracted strings or numbers are identical.  Strict equality is checked in JavaScript using `===`.  Storing the comparison result in a variable and returning the variable would look like this:
+Once you've extracted the necessary information and stored it in variables, it is time to return the result.  In most cases, you will want to check if the extracted strings or numbers are identical.  Strict equality is checked in JavaScript using `===`.  Storing the comparison result in a variable and returning the variable would look like this:
 ```javascript
 var someCreativeName = function(element1, element2) {
 	var firstNumber = element1.substr(2,2);

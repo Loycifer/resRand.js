@@ -126,6 +126,8 @@ var someCreativeName = function(element1, element2) {
 	var secondNumber = element2.substr(2,2);
 };
 ```
+Supplying only one argument to the .substr() method return everything from the supplied position to the end of the string.  Thus, `"SH01P12".substr(2)` would return `"01P12"`.
+
 If, instead of zero-padding, you used delimiters in your stimuli names, you will want to use the [.split()](#string-) method.  If your stimuli have the structure SH-2-P-38, and you wish to compare the number between SH and P, you should split the string by the "-" character, and access element 1 (the second element) of the result.  
 ```javascript
 var someCreativeName = function(element1, element2) {
@@ -167,7 +169,7 @@ var someCreativeName = function(element1, element2) {
 	return (firstNumber === secondNumber);
 };
 ```
-In fact, the function can even return the result of the process without using any intermediary variables:
+In fact, the function can even return the result of the process without using any intermediate variables:
 ```javascript
 var someCreativeName = function(element1, element2) {
 	return (element1.substr(2,2) === element2.substr(2,2));

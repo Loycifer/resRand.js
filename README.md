@@ -1,5 +1,5 @@
 #resRand.js
-resRand.js is an easy-to-use JavaScript object for restricted randomization of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
+resRand.js is an easy-to-use JavaScript object for restricted randomisation of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 
 ##Contents
 - [Overview](#overview)
@@ -39,6 +39,13 @@ resRand.js is an easy-to-use JavaScript object for restricted randomization of e
 
 
 ##Overview
+resRand.js is a JavaScript object that can randomise lists with restrictions.  It can perform simple randomisation, non-repeating randomisation, apply restrictions to the number of matching items that may appear in a row, or enforce a minimum distance between matching items.  Multiple non-conflicting restrictions can be applied at once, allowing for strict control over the randomisation process.
+
+Programming is fun, but installing yet another bulky programming language with a bagillion libraries and a specialised yet monolithic IDE is less fun.  That is why resRand.js is written in JavaScript. Whether you're using PsychoPy, MATLAB, Presentation, or PowerPoint (huh?), you already have all the sofware you need to execute JavaScript.  You may want to download a JavaScript-enabled text editor, such as [Notepad++](http://notepad-plus-plus.org/), or a JavaScript-enabled IDE, such as [NetBeans](https://netbeans.org/), if you do not already have one.
+
+resRand.js balances user-friendliness with flexibility, and should be easy enough for beginning programmers.  Check out the quick [tutorial](#tutorial) below to get started with resRand.js.  See the [API](#api) for detailed descriptions of the methods and properties of the resRand object. Have a root beer.
+
+
 ##Tutorial
 ###Using the template file resRand.html
 Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser.  Do so now, and you will see the text "Number of objects: 0".  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.

@@ -1,4 +1,4 @@
-#resRand.js
+![resRand.js Logo](/images/resRand.js.png)
 resRand.js is an easy-to-use JavaScript object for restricted randomisation of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 
 ##Contents

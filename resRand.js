@@ -143,12 +143,28 @@
 		    }
 
 		}
-		var randomElementNumber = Math.floor(Math.random() * inputLength);
-
-		var startingNumber = randomElementNumber;
+		if (hasFault)
+		{
+		    var unshuffledNums = [];
+		    for (var j = 0; j < inputLength; j++)
+		    {
+			unshuffledNums.push(j);
+		    }
+		    var randomNums = [];
+		    while (unshuffledNums.length > 0)
+		    {
+			randomNums.push(unshuffledNums.splice(Math.floor(Math.random()*unshuffledNums.length),1)[0]);
+		    }
+		}
 		while (hasFault)
 		{
 
+		    if (randomNums.length === 0)
+		    {
+			console.log("Cannot sort list. Please try again, or apply less restrictive rules.");
+			return false;
+		    }
+		    var randomElementNumber = randomNums.shift();
 		    //console.log("Checking " + input[i] + " against alement " + randomElementNumber);
 		    if (randomElementNumber !== i && !this.checkElementAgainstPosition(input[i], randomElementNumber))
 		    {
@@ -159,16 +175,6 @@
 			i = 0;
 
 			hasFault = false;
-		    }
-		    randomElementNumber++;
-		    if (randomElementNumber > inputLength)
-		    {
-			randomElementNumber = 0;
-		    }
-		    if (randomElementNumber === startingNumber && hasFault)
-		    {
-			console.log("Cannot sort list. Please try again, or apply less restrictive rules.");
-			return false;
 		    }
 		}
 		//console.log(this.workingList);

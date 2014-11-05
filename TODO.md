@@ -1,7 +1,7 @@
 ToDo
 
 - [ ] Add support for multiple consecutive trial blocks with error-checking at block edges.
-- [ ] When looking for a new position, change checking order from sequenced to random
+- [X] When looking for a new position, change checking order from sequenced to random
 - [ ] Finish README
   - [ ] Finish overview
     - [ ] Explain why javascript

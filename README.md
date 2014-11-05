@@ -48,7 +48,7 @@ resRand.js balances user-friendliness with flexibility, and should be easy enoug
 
 ##Tutorial
 ###Using the template file resRand.html
-Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser.  Do so now, and you will see the text "Number of objects: 0".  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.
+Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser.  Do so now, and you will see the text "Number of objects: 0. Number of rules: 0.".  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.
 
 Inside *resRand.html* you should find two `<script>` blocks: one at line 8 and one at line 9.  The first one loads the file *resRand.min.js*, which contains the resRand object in compressed JavaScript.  If you ever wish to make changes to the resRand.js source code, you will need to update this line to load *resRand.js*, but you can leave it alone for now.
 
@@ -218,12 +218,12 @@ If you think you've correctly set up you rule/rules, you can save and run *resRa
 
 ###Retrieving your randomised list
 ```javascript
-document.write("Number of objects: " + resRand.length);
+document.write("Number of objects: " + resRand.length + ". Number of rules: " + resRand.rules.length +".");
 resRand.goPrint();
 ```
 If you're here, you've probably finished adding your rules to resRand, and seen the results of your labour.  If you've constructed your rules properly, the randomised list should be exactly as you need it.  You can copy the contents of your table into spreadsheet software like Microsoft Excel, and it will retain its structure.
 
-Once you're certain that your code is working properly and your stimulus list is correct, you can comment out the line which reads `document.write("Number of objects: " + resRand.length);` by typing `//` before it.  This can make copying out the results easier by allowing the Ctrl+a shortcut for *select all* to work as desired.
+Once you're certain that your code is working properly and your stimulus list is correct, you can comment out the line which begins with `document.write` by typing `//` before it.  This can make copying out the results easier by allowing the Ctrl+a shortcut for *select all* to work as desired.
 
 If you want resRand to print 3 blocks at once, you can simply type `resRand.goPrint();` three times.  Currently, there is no rule-checking between the edges of blocks. This is a planned feature, however.
 

@@ -181,19 +181,19 @@ Now you need to add the rule to the resRand object. You do this using the `resRa
 
 If you just need the rule to make sure that no matching elements are touching each other, you can write:
 ```javascript
-resRand.addRule(someCreatuveName);
+resRand.addRule(someCreativeName);
 ```
 You can also have a rule make sure that no more than a certain amount of matching element will appear in a row (inclusive rule), or that matching elements will have a certain minimum distance between them (exclusive rule).  To have no more than 4 matching elements in a row, you would use this:
 ```javascript
-resRand.addRule(someCreatuveName,4);
+resRand.addRule(someCreativeName,4);
 ```
 or
 ```javascript
-resRand.addRule(someCreatuveName,4,true);
+resRand.addRule(someCreativeName,4,true);
 ```
 To make sure that matching elements have at least 5 non-matching elements between them, use this:
 ```javascript
-resRand.addRule(someCreatuveName,5,false);
+resRand.addRule(someCreativeName,5,false);
 ```
 You must call the `.addRule()` method after defining the rule function.  The structure should look something like this:
 ```javascript

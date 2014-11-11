@@ -161,7 +161,7 @@
 
 		    if (randomNums.length === 0)
 		    {
-			console.log("Cannot sort list. Please try again, or apply less restrictive rules.");
+			alert("Cannot sort list. Please try again, or apply less restrictive rules.");
 			return false;
 		    }
 		    var randomElementNumber = randomNums.shift();

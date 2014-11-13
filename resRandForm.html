@@ -20,6 +20,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<title>TODO supply a title</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	    .previewTextFalse {
+		font-size:1.7em;
+		color:LightSteelBlue;
+	    }
+	    .previewTextTrue {
+		//font-weight:bold;
+		font-size:1.7em;
+		color:black;
+	    }
+	</style>
     </head>
     <body>
 	<script src="resRand.js"></script>
@@ -128,12 +139,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		    targetRule.type = newType;
 		    switch (newType) {
 			case "char":
-document.getElementById("clength:"+uid).style.display = 'inline';
-			    document.getElementById("delimiter:"+uid).style.display = 'none';
+			    document.getElementById("clength:" + uid).style.display = 'inline';
+			    document.getElementById("delimiter:" + uid).style.display = 'none';
 			    break;
 			case "seg":
-			    document.getElementById("clength:"+uid).style.display = 'none';
-			    document.getElementById("delimiter:"+uid).style.display = 'inline';
+			    document.getElementById("clength:" + uid).style.display = 'none';
+			    document.getElementById("delimiter:" + uid).style.display = 'inline';
 			    break;
 			default:
 			    alert("Error in updateRule('" + uid + "')");
@@ -148,11 +159,11 @@ document.getElementById("clength:"+uid).style.display = 'inline';
 		var sampleWord = "";
 		if (newType === 'char')
 		{
-		    sampleWord += "<span style='color:LightSteelBlue;'>";
+		    sampleWord += "<span class='previewTextFalse'>";
 		    sampleWord += sourceWord.substr(0, newStart);
-		    sampleWord += "</span><span style='font-weight:bold;color:black;'>";
+		    sampleWord += "</span><span class='previewTextTrue'>";
 		    sampleWord += sourceWord.substr(newStart, newLength);
-		    sampleWord += "</span><span style='color:LightSteelBlue;'>";
+		    sampleWord += "</span><span class='previewTextFalse'>";
 		    sampleWord += sourceWord.substr(newStart + newLength);
 		    sampleWord += "</span>";
 		} else {
@@ -161,11 +172,11 @@ document.getElementById("clength:"+uid).style.display = 'inline';
 		    for (var i = 0; i < wordLength; i++)
 		    {
 
-			explodedWord[i] = "<span style='"+((i === newStart)?"font-weight:bold;color:black;":"color:LightSteelBlue")+
-			"'>" + explodedWord[i]+"</span>";
+			explodedWord[i] = "<span class='" + ((i === newStart) ? "previewTextTrue" : "previewTextFalse") +
+			"'>" + explodedWord[i] + "</span>";
 
 		    }
-		    sampleWord = explodedWord.join("<span style='color:LightSteelBlue;'>-</span>");
+		    sampleWord = explodedWord.join("<span class='previewTextFalse'>" + newDelimiter + "</span>");
 
 		}
 		previewCell.innerHTML = sampleWord;

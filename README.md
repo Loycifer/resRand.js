@@ -428,7 +428,7 @@ The `.randomise()` method randomises the current array without applying any rule
 resRand.import([1,2,3,4,5,6]);
 resRand.randomise();
 var myResult = resRand.export();
-// myResult will contain somthing like [5.2.1.4.6.3]
+// myResult will contain somthing like [5,2,1,4,6,3]
 ```
 ---
 ###Properties

@@ -86,7 +86,7 @@ When naming your stimuli, it's a good idea to pad your numbers with zeros.  For 
 
 You may also choose to separate segments in your stimuli names using a delimiter, such as SH-2-P-26.  This can also be easily parsed by JavaScript, and does not require any zero-padding.
 
-Once you've entered all your values into the array, save and run *resRand.html*.  You should see your table of your items, randomised with no restrictions.  If you refresh the page, the list will randomise itself again.  Check the reported number of objects at the top of the page to make sure you've correctly entered the right amount of stimuli.  Once you've confirmed that your stimuli have been properly entered into the array, it is time to create sorting rules to restrict randomisation.
+Once you've entered all your values into the array, save and run *resRand.html*.  You should see your table of items, randomised with no restrictions.  If you refresh the page, the list will randomise itself again.  Check the reported number of objects at the top of the page to make sure you've correctly entered the right amount of stimuli.  Once you've confirmed that your stimuli have been properly entered into the array, it is time to create sorting rules to restrict randomisation.
 
 
 

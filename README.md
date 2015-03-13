@@ -142,7 +142,7 @@ var someCreativeName = function(element1, element2) {
 	var firstBang = element1.split("-");
 	var firstNumber = firstBang[1];
 	var secondBang = element2.split("-");
-	var secondNumber = firstBang[1];
+	var secondNumber = secondBang[1];
 };
 ```
 This can also be written like so:

@@ -569,7 +569,7 @@ var myString = "Hello Worf!";
 ~ myString.substr(2,5) returns "llo W"
 ~ myString.substr(2) returns "llo Worf!"
 ~ myString.split(" ") returns ["Hello","Worf!"]
-~ myString.split("o") returns ["Hell","W","rf!"]
+~ myString.split("o") returns ["Hell"," W","rf!"]
 ```
 ---
 

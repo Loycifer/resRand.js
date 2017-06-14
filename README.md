@@ -509,7 +509,7 @@ Symbol | Meaning
 ```
 
 ---
-### Logic [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+### Logic [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 Logical operators determine logic between values.  And-operators `&&` evaluate to true when all values equal true. Or-operators `||` evaluate to true when at least one of the values is true.  The not-operator `!` returns the opposite of its value.
 
 Symbol | Meaning
@@ -560,7 +560,7 @@ if (x < 15)
 
 ```
 ---
-### String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+### String [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include `.length`, `.split()` or `.substr()`. Strings can be concatenated using the `+` operator.
 ```javascript
 var myString = "Hello Worf!";

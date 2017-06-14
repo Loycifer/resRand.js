@@ -2,7 +2,7 @@
 
 resRand.js is an easy-to-use JavaScript object for restricted randomisation of experimental stimuli, controlled trials, or your large collection of rare porcelain clowns.
 
-##Contents
+## Contents
 - [Overview](#overview)
 - [Tutorial](#tutorial)
   1. [Using the template file resRand.html](#using-the-template-file-resrandhtml)
@@ -39,7 +39,7 @@ resRand.js is an easy-to-use JavaScript object for restricted randomisation of e
 
 
 
-##Overview
+## Overview
 resRand.js is a JavaScript object that can randomise lists with restrictions.  It can perform simple randomisation, non-repeating randomisation, apply restrictions to the number of matching items that may appear in a row, or enforce a minimum distance between matching items.  Multiple non-conflicting restrictions can be applied at once, allowing for strict control over the randomisation process.
 
 Programming is fun, but installing yet another bulky programming language with a bagillion libraries and a specialised yet monolithic IDE is less fun.  That is why resRand.js is written in JavaScript. Whether you're using PsychoPy, MATLAB, Presentation, or PowerPoint (huh?), you already have all the sofware you need to execute JavaScript.  You may want to download a JavaScript-enabled text editor, such as [Notepad++](http://notepad-plus-plus.org/), or a JavaScript-enabled IDE, such as [NetBeans](https://netbeans.org/), if you do not already have one.
@@ -47,15 +47,15 @@ Programming is fun, but installing yet another bulky programming language with a
 resRand.js balances user-friendliness with flexibility, and should be easy enough for beginning programmers.  Check out the quick [tutorial](#tutorial) below to get started with resRand.js.  See the [API](#api) for detailed descriptions of the methods and properties of the resRand object. Have a root beer.
 
 
-##Tutorial
-###Using the template file resRand.html
+## Tutorial
+### Using the template file resRand.html
 Once you have downloaded the repository .zip file [master.zip](https://github.com/Loycifer/resRand.js/archive/master.zip) and extracted the folder "resRand.js-master", you should find a file within the folder called *resRand.html*.  This is the template file we will be working with.  To run the file, simply open it in your web browser.  Do so now, and you will see the text "Number of objects: 0. Number of rules: 0.".  To edit the file, you will need to open it in a JavaScript-enabled IDE or text editor. I recommend using [Notepad++](http://notepad-plus-plus.org/) for smaller projects and [NetBeans](https://netbeans.org/) for larger ones.  You could also use plain text editors like Windows Notepad, but you will have a much harder time managing your code and identifying errors.
 
 Inside *resRand.html* you should find two `<script>` blocks: one at line 8 and one at line 9.  The first one loads the file *resRand.min.js*, which contains the resRand object in compressed JavaScript.  If you ever wish to make changes to the resRand.js source code, you will need to update this line to load *resRand.js*, but you can leave it alone for now.
 
 The second `<script>` block is where you will be entering your code.  There is already a bit of code there to help highlight the structure of the script.  When you're ready to get your hands dirty, move on to the next part of the tutorial. And maybe clean your keyboard.
 
-###Importing your list of items
+### Importing your list of items
 
 ```javascript
 var resRand; //Do not change or remove this line.
@@ -93,7 +93,7 @@ Once you've entered all your values into the array, save and run *resRand.html*.
 
 
 
-###Creating and applying sorting rules
+### Creating and applying sorting rules
 
 ```javascript
 //Create sorting rules for your array
@@ -217,7 +217,7 @@ You can add as many rules as you need.  Different rules can have different range
 
 If you think you've correctly set up you rule/rules, you can save and run *resRand.html* to check the results.  Now go take a little break. You did a lot I think.
 
-###Retrieving your randomised list
+### Retrieving your randomised list
 ```javascript
 document.write("Number of objects: " + resRand.length + ". Number of rules: " + resRand.rules.length +".");
 resRand.goPrint();
@@ -239,19 +239,19 @@ You can also specify a custom method of printing your results.  This way, you ca
 Congratulations! You've made it! Now you may go spend weeks and weeks in the lab running your experiment.
 
 
-##API
-###Methods
+## API
+### Methods
 ---
-####.addRule(...)
+#### .addRule(...)
 The `.addRule(...)` method adds a sorting rule to resRand's randomisation process.
-#####Syntax
+##### Syntax
 `resRand.addRule(function: rule[, int: range, bool: isInclusive]);`
-#####Parameters
+##### Parameters
 - **rule**  - *Required.* A function which takes two arguments and returns a boolean.  This function should compare aspects of its two arguments and return `true` if the comparison passes and `false` if the comparison fails. 
 - **range** - *Optional.* An integer which specifies the distance from an element to which the rule should be applied. Default value is `1`. 
 - **isInclusive** - *Optional.* A boolean which specifies whether the rule should be inclusive with `true` or exclusive with `false`.  An inclusive rule with a range of 2 will ensure that no more than two matching elements will exist in a row, while an exclusive rule will ensure that two matching elements will have at least 2 non-matching elements between them.  With range set to 1, inclusive and exclusive rules are identical.  Default value is `true`.
 
-#####Example
+##### Example
 ```javascript
 var myFirstRule = function(element1, element2)
 {
@@ -285,46 +285,46 @@ resRand.addRule(myLastRule, 4, false);
 ```
 ---
 
-####.applyRules()
+#### .applyRules()
 The `.applyRules()` method enforces all added rules, and reorganises elements if necessary.  This method is called during `.go()` and `.goPrint(...)`.  
-#####Syntax
+##### Syntax
 `resRand.applyRules();`
 
 ---
-####.checkElementAgainstPosition(...)
+#### .checkElementAgainstPosition(...)
 *Does not need to be called by the user.* The `.checkElementAgainstPosition(...)` method checks if an element can occupy a position in the working list array without breaking any rules.
-#####Syntax
+##### Syntax
 `resRand.checkElementAgainstPosition(object: element, int: position);`
-#####Parameters
+##### Parameters
 - **element**  - *Required.* The contents of an array element.
 - **position** - *Required.* An integer representing a position in the working list where the element will be projected.
 
 ---
-####.export()
+#### .export()
 The `.export()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.getResult()`.
-#####Syntax
+##### Syntax
 `resRand.export();`
-#####Example
+##### Example
 ```javascript
 var myResults = resRand.export();
 //myResults now contains a randomised array
 ```
 ---
-####.getResult()
+#### .getResult()
 The `.getResult()` method returns an array containing the values of the randomised list.  If the `.go()` method has not yet been called, the returned list will not be randomised.  It is the same as `.export()`.
-#####Syntax
+##### Syntax
 `resRand.getResult();`
-#####Example
+##### Example
 ```javascript
 var myResults = resRand.getResult();
 //myResults now contains a randomised array
 ```
 ---
-####.go()
+#### .go()
 The `.go()` method runs the randomisation `.randomise()` and sorting `.applyRules()` processes on the imported array, and returns a copy of the randomised array.  This method should be called after adding rules to the object with `.addRule(...)`.
-#####Syntax
+##### Syntax
 `resRand.go();`
-#####Example
+##### Example
 ```javascript
 resRand.import(userArray);
 resRand.addRule(myRule, 1);
@@ -332,14 +332,14 @@ var myResult = resRand.go();
 // myResult contains a randomised copy of userArray which conforms to myRule
 ```
 ---
-####.goPrint(...)
+#### .goPrint(...)
 The `.goPrint(...)` combines the `.go()` method and the `.printTable(...)` method, and returns a copy of the randomised array.  This is the most straightforward method for executing and printing randomization.  This method should be called after adding rules to the object with `.addRule(...)`.
-#####Syntax
+##### Syntax
 `resRand.goPrint([node: targetDOMElement]);`
-#####Parameters
+##### Parameters
 - **targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
 
-#####Example
+##### Example
 ```javascript
 // Print table to document body
 resRand.goPrint();
@@ -350,14 +350,14 @@ var myResult = resRand.goPrint(targetNode);
 ```
 
 ---
-####.import(...)
+#### .import(...)
 The `.import(...)` method takes a user-specified array and inserts it into the resRand object for randomisation.  
-#####Syntax
+##### Syntax
 `resRand.import(array: userArray);`
-#####Parameters
+##### Parameters
 - **userArray** - *Required.* An array containing numbers, strings, or objects.  Possibly a list of filenames, or codes representing stimuli or participants.
 
-#####Example
+##### Example
 ```javascript
 var stimulusList = ["SND01P00",
                     "SND01P01",
@@ -371,18 +371,18 @@ resRand.import(stimulusList);
 
 ```
 ---
-####.printCustom(...)
+#### .printCustom(...)
 The `.printCustom(...)` method provides a more flexible means of displaying results than `.printTable(...)`.  This method requires a function that will run once per element.
-#####Syntax
+##### Syntax
 `resRand.printCustom(function: callback[, string: header, string: footer, node: targetDOMElement])`
 
-#####Parameters
+##### Parameters
 - **callback** - *Required.* A function which takes an array element as an argument, and returns a string containing the desired HTML code.
 - **header** - *Optional.* A string which contains the HTML code to be printed before the array elements.  This string might contain an opening `<table>` tag and column headers. The default value is an empty string.
 - **footer** - *Optional.* A string which contains the HTML code to be printed after the array elements. This string might contain a closing `</table>` tag. The default value is an empty string.
 - **targetDOMElement** - *Optional.* A DOM element in which the result should be printed.  The result appends itself to the innerHTML of the DOM element. The default value is `document.body`.
 
-#####Example
+##### Example
 ```javascript
 var printFunction = function(element)
 {
@@ -397,14 +397,14 @@ var targetNode = document.getElementById("tableDiv");
 resRand.printCustom(printFunction, header, footer, targetNode);
 ```
 ---
-####.printTable(...)
+#### .printTable(...)
 The `.printTable(...)` methods prints current array to the document as an HTML table.  Tables are parsed correctly when copied from the web page into spreadsheet software.
-#####Syntax
+##### Syntax
 `resRand.printTable([node: targetDOMElement]);`
-#####Parameters
+##### Parameters
 - **targetDOMElement** - *Optional.* A DOM element in which the table should be printed.  The table appends itself to the innerHTML of the DOM element. The default value is `document.body`.
 
-#####Example
+##### Example
 ```javascript
 // Print the table to the document body
 resRand.printTable();
@@ -413,17 +413,17 @@ var targetNode = document.getElementById("ResultsDiv");
 resRand.printTable(targetNode);
 ```
 ---
-####.printToConsole()
+#### .printToConsole()
 The `.printToConsole()` method outputs the contents of the current array to the JavaScript console.
-#####Syntax
+##### Syntax
 `resRand.printToConsole();`
 
 ---
-####.randomise()
+#### .randomise()
 The `.randomise()` method randomises the current array without applying any rules.
-#####Syntax
+##### Syntax
 `resRand.randomise();`
-#####Example
+##### Example
 ```javascript
 resRand.import([1,2,3,4,5,6]);
 resRand.randomise();
@@ -431,13 +431,13 @@ var myResult = resRand.export();
 // myResult will contain somthing like [5,2,1,4,6,3]
 ```
 ---
-###Properties
+### Properties
 ---
-####.length
+#### .length
 The `.length` property returns the length of the current array.  This property is read-only.
-#####Syntax
+##### Syntax
 `resRand.length;`
-#####Example
+##### Example
 ```javascript
 resRand.import([10,20,30]);
 var listLength = resRand.legnth;
@@ -445,33 +445,33 @@ var listLength = resRand.legnth;
 ```
 
 ---
-####.rules
+#### .rules
 The `.rules` property returns the array of added rules.
-#####Syntax
+##### Syntax
 `resRand.rules;`
 
 ---
-####.sourceList
+#### .sourceList
 The `.sourceList` property returns the unmodified imported array.
-#####Syntax
+##### Syntax
 `resRand.sourceList;`
 
 ---
-####.workingList
-The '.workingList` property returns the current array.  If no randomisation or rules have been applied, returns a copy of the unmodified imported array.
-#####Syntax
+#### .workingList
+The `.workingList` property returns the current array.  If no randomisation or rules have been applied, returns a copy of the unmodified imported array.
+##### Syntax
 `resRand.workingList;`
 
 ---
 
-##JavaScript Quick Reference
+## JavaScript Quick Reference
 
 JavaScript can be run in all modern web browsers without additional software installation.
 
 You should be familiar with the following JavaScript types and concepts.  If you want more information on a concept, clicking the [[?]](#) icon will redirect you to a useful reference page at [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
 ---
-###Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+### Variable [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
   A variable is a named container that holds any type of value or object.  Variables are declared using the keyword `var`.  It is important to remember that variable names are case-sensitive; `myVar` is not the same as `MyVar`.  Variable names are conventionally type in camelCase, but this is not a requirement of the language.  A variable declared inside a function is locally scoped; this means the variable will only be available from within its hosting function.
 ```javascript
 var myNumber = 2 + 3;
@@ -485,7 +485,7 @@ var lastName = "Dover";
 
 
 ---
-###Comparison [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+### Comparison [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 Comparisons are used to compare values with each other.  The return type of a comparison is a boolean (`true` or `false`).
 
 Symbol | Meaning
@@ -509,7 +509,7 @@ Symbol | Meaning
 ```
 
 ---
-###Logic [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+### Logic [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 Logical operators determine logic between values.  And-operators `&&` evaluate to true when all values equal true. Or-operators `||` evaluate to true when at least one of the values is true.  The not-operator `!` returns the opposite of its value.
 
 Symbol | Meaning
@@ -527,7 +527,7 @@ Symbol | Meaning
 ~ !true returns false
 ```
 ---
-###Boolean [[?]](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
+### Boolean [[?]](https://developer.mozilla.org/en-US/docs/Glossary/Boolean)
 A boolean is a type that represents `true` or `false`.  Booleans are typed without quotes, and are the standard return type of comparisons and logical evaluations.
 ```javascript
 var isFourMoreThanThree = 4 > 3;
@@ -538,7 +538,7 @@ var doPigsMakeGoodSeaplanes = canPigsFly && canPigsSwim;
 ~ doPigsMakeGoodSeaplanes returns false
 ```
 ---
-###If...else [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+### If...else [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 `If...else` statements allow for conditional execution of code.  These statements are syntactically organized like this: `if(isRaining){bring umbrella;}else{wear shades;}`.  The `else {}` block is optional.  
 ```javascript
 var x = 20;
@@ -560,7 +560,7 @@ if (x < 15)
 
 ```
 ---
-###String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+### String [[?]] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 A string is a sequence of characters enclosed in quotes, used for textual information.  String properties or methods you may need to use include `.length`, `.split()` or `.substr()`. Strings can be concatenated using the `+` operator.
 ```javascript
 var myString = "Hello Worf!";
@@ -573,7 +573,7 @@ var myString = "Hello Worf!";
 ```
 ---
 
-###Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+### Array [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 An array is an ordered list of elements, enclosed with square brackets, separated by commas.  These elements can be anything from numbers or strings to objects or more arrays.  An element can be accessed by entering the number in square brackets after the array name.  JavaScript supports arrays with multiple element types.
 ```javascript
 var myArray = [1,2,"three",Math.PI,[true,false]]
@@ -583,7 +583,7 @@ var myArray = [1,2,"three",Math.PI,[true,false]]
 ```
 
 ---
-###Function [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
+### Function [[?]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 A function is a named block of code that is only executed when called.  Variables can be passed into a function as arguments.  A function that belongs to an object is called a method.  Functions can be assigned to variable names using the `function` expression to create a lambda function.  (There are a few ways to declare functions, but this method should be learned first.)  The `return` keyword is used to specify what a function outputs when called.
 ```javascript
 var addToFive = function(x) {return x+5;}
@@ -600,7 +600,7 @@ var doStuff = function(x)
 ```
 ---
 
-###License
+### License
 
 Copyright :copyright: 2014  Loy Clements
 
